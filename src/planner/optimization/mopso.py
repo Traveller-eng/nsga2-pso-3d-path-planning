@@ -216,6 +216,7 @@ class MOPSOOptimizer:
         self.evals = 0
         self.iteration = 0
         self.history: list[dict] = []
+        self.evaluation_history: list[dict] = []
         self.normalization: ObjectiveNormalization | None = None
 
     def _get_bounds(self, config: TrajectoryConfig, world: WorldConfig) -> tuple[np.ndarray, np.ndarray]:
@@ -228,7 +229,13 @@ class MOPSOOptimizer:
 
     def _evaluate(self, trajectory: Trajectory, evaluator: TrajectoryEvaluator) -> EvaluationResult:
         self.evals += 1
-        return evaluator.evaluate(trajectory)
+        result = evaluator.evaluate(trajectory)
+        self.evaluation_history.append({
+            "evaluations": self.evals,
+            "objectives": result.objectives.copy(),
+            "is_feasible": result.is_feasible,
+        })
+        return result
 
     def _initialize_particles(
         self,

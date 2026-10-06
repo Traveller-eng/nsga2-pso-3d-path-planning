@@ -247,10 +247,17 @@ class NSGA2Optimizer:
         self.evals = 0
         self.generation = 0
         self.history = []
+        self.evaluation_history: list[dict] = []
         
     def _evaluate_trajectory(self, traj: Trajectory, evaluator: TrajectoryEvaluator) -> EvaluationResult:
         self.evals += 1
-        return evaluator.evaluate(traj)
+        result = evaluator.evaluate(traj)
+        self.evaluation_history.append({
+            "evaluations": self.evals,
+            "objectives": result.objectives.copy(),
+            "is_feasible": result.is_feasible,
+        })
+        return result
         
     def _get_bounds(self, config: TrajectoryConfig, world: WorldConfig) -> tuple[np.ndarray, np.ndarray]:
         # Expand bounds for each position gene

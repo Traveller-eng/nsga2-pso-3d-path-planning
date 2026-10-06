@@ -16,6 +16,11 @@ if str(ROOT / "src") not in sys.path:
 from planner.metrics.hypervolume import calculate_hypervolume
 from planner.metrics.igd import calculate_igd
 from planner.metrics.pareto import pareto_filter, pooled_reference_front
+from planner.metrics.convergence import (
+    aggregate_checkpoint_metrics,
+    compute_checkpoint_metrics,
+    compute_checkpoints,
+)
 
 from planner.environment.world import make_3d_static_world
 from planner.optimization.hybrid import HybridNSGA2PSOOptimizer
@@ -304,14 +309,22 @@ def main() -> None:
                 "feasible_count": int(front.shape[0]),
                 "front": front.tolist(),
                 "history": _serialize_history(run["history"]),
+                "evaluation_history": _serialize_history(run["optimizer"].evaluation_history),
             })
 
     pooled_reference = pooled_reference_front(feasible_by_run, feasible_only=True)
     reference_point = get_reference_point(config)
+    checkpoints = compute_checkpoints(config["max_evaluations"])
 
     for row in all_outputs:
         front = np.asarray(row["front"], dtype=float)
         metrics = compute_run_metrics(front, pooled_reference, reference_point)
+        checkpoint_metrics = compute_checkpoint_metrics(
+            row["evaluation_history"],
+            checkpoints,
+            reference_point,
+            pooled_reference,
+        )
         row.update({
             "reference_point": reference_point.tolist(),
             "igd_reference_front": pooled_reference.tolist(),
@@ -320,12 +333,44 @@ def main() -> None:
             "igd": metrics["igd"],
             "nondominated_size": metrics["nondominated_size"],
             "best_objective": metrics["best_objective"],
+            "convergence": checkpoint_metrics,
         })
+
+    convergence_records = [
+        {
+            "algorithm": run["algorithm"],
+            "seed": run["seed"],
+            **checkpoint,
+        }
+        for run in all_outputs
+        for checkpoint in run["convergence"]
+    ]
+    convergence_aggregates = aggregate_checkpoint_metrics(convergence_records)
 
     aggregates = aggregate_runs(all_outputs, args.algorithms)
     comparisons = compare_hybrid_means(aggregates)
     csv_rows, csv_fields = build_csv_rows(all_outputs, aggregates, comparisons)
     write_csv(results_dir / "benchmark_summary.csv", csv_rows, csv_fields)
+
+    convergence_fields = [
+        "record_type", "algorithm", "seed", "evaluations", "hypervolume", "igd",
+        "feasible_count", "front_size", "hypervolume_mean", "hypervolume_median",
+        "hypervolume_std", "igd_mean", "igd_median", "igd_std",
+        "igd_sample_count",
+    ]
+    convergence_csv_rows = [
+        {"record_type": "per_seed", **record}
+        for record in convergence_records
+    ]
+    convergence_csv_rows.extend(
+        {"record_type": "cross_seed_aggregate", **record}
+        for record in convergence_aggregates
+    )
+    write_csv(
+        results_dir / "benchmark_convergence.csv",
+        convergence_csv_rows,
+        convergence_fields,
+    )
 
     benchmark_artifact = {
         "metadata": {
@@ -340,12 +385,18 @@ def main() -> None:
             "igd_reference_front_size": int(pooled_reference.shape[0]) if pooled_reference.size else 0,
             "igd_reference_front_method": "Pool feasible final objective vectors across all selected algorithms and seeds, remove duplicates, then Pareto-filter for minimization.",
             "igd_normalization": "none; raw objective space",
-            "checkpoint_hv_igd": "not available in this benchmark version",
+            "checkpoint_evaluations": checkpoints.tolist(),
+            "checkpoint_information_constraint": "Each checkpoint approximation is the cumulative feasible non-dominated front of objective vectors recorded at evaluations <= that checkpoint. The final pooled feasible non-dominated front is used only as the common IGD distance reference; its vectors are never inserted into checkpoint approximations. The 300-evaluation checkpoint summarizes all feasible evaluated solutions, so it can differ from final-population metrics after algorithm selection or archive pruning.",
+            "undefined_checkpoint_igd": "JSON null when no feasible approximation exists at a checkpoint; aggregate IGD statistics use only defined runs and include igd_sample_count.",
             "evaluations_to_target_hv": "not available in this benchmark version",
         },
         "runs": all_outputs,
         "aggregates": aggregates,
         "hybrid_mean_comparisons": comparisons,
+        "convergence": {
+            "per_seed": convergence_records,
+            "cross_seed_aggregates": convergence_aggregates,
+        },
     }
     with (results_dir / "benchmark_runs.json").open("w", encoding="utf-8") as handle:
         json.dump(_to_serializable(benchmark_artifact), handle, indent=2)

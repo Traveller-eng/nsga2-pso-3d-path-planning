@@ -78,6 +78,7 @@ class HybridNSGA2PSOOptimizer:
         self.pso_evaluations = 0
         self.generation = 0
         self.history: list[dict] = []
+        self.evaluation_history: list[dict] = []
 
     def _get_bounds(self, config: TrajectoryConfig, world: WorldConfig) -> tuple[np.ndarray, np.ndarray]:
         lower = np.tile(world.lower_bounds, config.n_free_points)
@@ -92,14 +93,26 @@ class HybridNSGA2PSOOptimizer:
             raise RuntimeError("Objective evaluation budget exhausted before NSGA-II evaluation.")
         self.evals += 1
         self.nsga2_evaluations += 1
-        return evaluator.evaluate(trajectory)
+        result = evaluator.evaluate(trajectory)
+        self.evaluation_history.append({
+            "evaluations": self.evals,
+            "objectives": result.objectives.copy(),
+            "is_feasible": result.is_feasible,
+        })
+        return result
 
     def _evaluate_pso(self, trajectory: Trajectory, evaluator: TrajectoryEvaluator) -> EvaluationResult:
         if self.evals >= self.max_evaluations:
             raise RuntimeError("Objective evaluation budget exhausted before PSO evaluation.")
         self.evals += 1
         self.pso_evaluations += 1
-        return evaluator.evaluate(trajectory)
+        result = evaluator.evaluate(trajectory)
+        self.evaluation_history.append({
+            "evaluations": self.evals,
+            "objectives": result.objectives.copy(),
+            "is_feasible": result.is_feasible,
+        })
+        return result
 
     def _record_history(self, population: list[Individual], fronts: list[list[Individual]]) -> None:
         feasible = [ind for ind in population if ind.evaluation.is_feasible]
