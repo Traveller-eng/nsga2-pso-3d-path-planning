@@ -202,6 +202,79 @@ def summarize(values):
     }
 
 
+def aggregate_runs(runs: list[dict], algorithms: list[str]) -> list[dict]:
+    metrics = ("hypervolume", "igd", "runtime", "feasible_count")
+    aggregates = []
+    for algorithm in algorithms:
+        subset = [run for run in runs if run["algorithm"] == algorithm]
+        aggregates.append({
+            "algorithm": algorithm,
+            "run_count": len(subset),
+            **{
+                metric: summarize([run[metric] for run in subset])
+                for metric in metrics
+            },
+        })
+    return aggregates
+
+
+def compare_hybrid_means(aggregates: list[dict]) -> list[dict]:
+    by_algorithm = {row["algorithm"]: row for row in aggregates}
+    if "Hybrid" not in by_algorithm:
+        return []
+
+    comparisons = []
+    for baseline in ("NSGA2", "MOPSO"):
+        if baseline not in by_algorithm:
+            continue
+        for metric in ("hypervolume", "igd"):
+            baseline_mean = by_algorithm[baseline][metric]["mean"]
+            hybrid_mean = by_algorithm["Hybrid"][metric]["mean"]
+            difference = hybrid_mean - baseline_mean
+            relative = (
+                100.0 * difference / abs(baseline_mean)
+                if baseline_mean != 0.0 else float("nan")
+            )
+            comparisons.append({
+                "algorithm": "Hybrid",
+                "baseline_algorithm": baseline,
+                "metric": metric,
+                "mean_difference": difference,
+                "relative_difference_percent": relative,
+            })
+    return comparisons
+
+
+def build_csv_rows(runs: list[dict], aggregates: list[dict], comparisons: list[dict]) -> tuple[list[dict], list[str]]:
+    metrics = ("hypervolume", "igd", "runtime", "feasible_count")
+    statistic_names = ("mean", "median", "std", "min", "max")
+    fields = [
+        "record_type", "algorithm", "baseline_algorithm", "seed", "evaluations",
+        "feasible_count", "nondominated_size", "hypervolume", "igd", "runtime",
+        "metric", "mean_difference", "relative_difference_percent",
+    ]
+    fields.extend(f"{metric}_{stat}" for metric in metrics for stat in statistic_names)
+
+    rows = []
+    for run in runs:
+        rows.append({
+            "record_type": "per_run",
+            **{key: run.get(key) for key in (
+                "algorithm", "seed", "evaluations", "feasible_count",
+                "nondominated_size", "hypervolume", "igd", "runtime",
+            )},
+        })
+    for aggregate in aggregates:
+        row = {"record_type": "cross_seed_aggregate", "algorithm": aggregate["algorithm"]}
+        for metric in metrics:
+            for stat in statistic_names:
+                row[f"{metric}_{stat}"] = aggregate[metric][stat]
+        rows.append(row)
+    for comparison in comparisons:
+        rows.append({"record_type": "mean_difference", **comparison})
+    return rows, fields
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Run a small benchmark across NSGA-II, MOPSO, and Hybrid.")
     parser.add_argument("--config", type=str, default=str(DEFAULT_CONFIG))
@@ -249,36 +322,33 @@ def main() -> None:
             "best_objective": metrics["best_objective"],
         })
 
-    run_rows = []
-    for algorithm in args.algorithms:
-        subset = [row for row in all_outputs if row["algorithm"] == algorithm]
-        hv_values = [row["hypervolume"] for row in subset]
-        igd_values = [row["igd"] for row in subset]
-        run_rows.append({
-            "algorithm": algorithm,
-            "runtime_mean": summarize([row["runtime"] for row in subset])["mean"],
-            "runtime_median": summarize([row["runtime"] for row in subset])["median"],
-            "evaluations_mean": summarize([row["evaluations"] for row in subset])["mean"],
-            "feasible_count_mean": summarize([row["feasible_count"] for row in subset])["mean"],
-            "hypervolume_mean": summarize(hv_values)["mean"],
-            "igd_mean": summarize(igd_values)["mean"],
-        })
+    aggregates = aggregate_runs(all_outputs, args.algorithms)
+    comparisons = compare_hybrid_means(aggregates)
+    csv_rows, csv_fields = build_csv_rows(all_outputs, aggregates, comparisons)
+    write_csv(results_dir / "benchmark_summary.csv", csv_rows, csv_fields)
 
-    write_csv(
-        results_dir / "benchmark_summary.csv",
-        run_rows,
-        [
-            "algorithm",
-            "runtime_mean",
-            "runtime_median",
-            "evaluations_mean",
-            "feasible_count_mean",
-            "hypervolume_mean",
-            "igd_mean",
-        ],
-    )
+    benchmark_artifact = {
+        "metadata": {
+            "configuration_file": str(Path(args.config)),
+            "configuration": config,
+            "algorithms": args.algorithms,
+            "seeds": args.seeds,
+            "expected_run_count": len(args.algorithms) * len(args.seeds),
+            "objective_space": config.get("metrics", {}).get("objective_space", "raw"),
+            "hypervolume_reference_point": reference_point.tolist(),
+            "igd_reference_front": pooled_reference.tolist(),
+            "igd_reference_front_size": int(pooled_reference.shape[0]) if pooled_reference.size else 0,
+            "igd_reference_front_method": "Pool feasible final objective vectors across all selected algorithms and seeds, remove duplicates, then Pareto-filter for minimization.",
+            "igd_normalization": "none; raw objective space",
+            "checkpoint_hv_igd": "not available in this benchmark version",
+            "evaluations_to_target_hv": "not available in this benchmark version",
+        },
+        "runs": all_outputs,
+        "aggregates": aggregates,
+        "hybrid_mean_comparisons": comparisons,
+    }
     with (results_dir / "benchmark_runs.json").open("w", encoding="utf-8") as handle:
-        json.dump(_to_serializable(all_outputs), handle, indent=2)
+        json.dump(_to_serializable(benchmark_artifact), handle, indent=2)
 
     print(json.dumps({
         "algorithms": args.algorithms,
