@@ -1,0 +1,31 @@
+{
+  "world": {
+    "bounds_max": [10.0, 10.0, 10.0],
+    "start": [0.0, 0.0, 0.0],
+    "goal": [9.0, 9.0, 9.0],
+    "v_max": 3.0,
+    "a_max": 5.0,
+    "d_safe": 0.5,
+    "d_comfort": 1.5,
+    "t_max_factor": 1.75
+  },
+  "trajectory": {
+    "n_control_points": 8,
+    "dim": 3,
+    "degree": 5,
+    "optimize_time": false
+  },
+  "population_size": 30,
+  "max_evaluations": 300,
+  "hybrid": {
+    "elite_fraction": 0.15,
+    "min_elites": 5,
+    "pso_iterations": 5,
+    "pso_inertia": 0.5,
+    "pso_cognitive": 1.5,
+    "pso_social": 1.5,
+    "velocity_clamp": 0.2,
+    "neighborhood_size": 5,
+    "writeback_probability": 1.0
+  }
+}
