@@ -88,11 +88,15 @@ class HybridNSGA2PSOOptimizer:
         return self.velocity_clamp * (upper_bounds - lower_bounds)
 
     def _evaluate_nsga2(self, trajectory: Trajectory, evaluator: TrajectoryEvaluator) -> EvaluationResult:
+        if self.evals >= self.max_evaluations:
+            raise RuntimeError("Objective evaluation budget exhausted before NSGA-II evaluation.")
         self.evals += 1
         self.nsga2_evaluations += 1
         return evaluator.evaluate(trajectory)
 
     def _evaluate_pso(self, trajectory: Trajectory, evaluator: TrajectoryEvaluator) -> EvaluationResult:
+        if self.evals >= self.max_evaluations:
+            raise RuntimeError("Objective evaluation budget exhausted before PSO evaluation.")
         self.evals += 1
         self.pso_evaluations += 1
         return evaluator.evaluate(trajectory)
@@ -218,6 +222,9 @@ class HybridNSGA2PSOOptimizer:
         upper_bounds: np.ndarray,
         normalization: ObjectiveNormalization,
     ) -> None:
+        if self.evals >= self.max_evaluations:
+            return
+
         velocity_limit = self._velocity_bounds(lower_bounds, upper_bounds)
         r1 = self.rng.random(size=particle.position.shape)
         r2 = self.rng.random(size=particle.position.shape)
@@ -378,6 +385,8 @@ class HybridNSGA2PSOOptimizer:
 
             offspring_pop: list[Individual] = []
             for traj in offspring:
+                if self.evals >= self.max_evaluations:
+                    break
                 offspring_pop.append(Individual(traj, self._evaluate_nsga2(traj, evaluator)))
 
             combined = population + offspring_pop

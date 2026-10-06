@@ -106,6 +106,29 @@ def test_hybrid_writeback_probability_is_reproducible_and_respects_p_values():
     np.testing.assert_allclose(pop2[1].evaluation.objectives, [2.0, 2.0, 2.0])
 
 
+def test_hybrid_budget_does_not_exceed_max_evaluations():
+    world = make_3d_static_world(
+        bounds_max=(10.0, 10.0, 10.0),
+        start=(0.0, 0.0, 0.0),
+        goal=(8.0, 8.0, 8.0),
+        obstacles=[],
+    )
+    world.v_max = 100.0
+    world.a_max = 1000.0
+    config = TrajectoryConfig(6, 3, world.start, world.goal, world.t_max, degree=3)
+    opt = HybridNSGA2PSOOptimizer(
+        population_size=5,
+        max_evaluations=12,
+        elite_fraction=0.5,
+        min_elites=2,
+        pso_iterations=2,
+        seed=0,
+    )
+    opt.optimize(world, config)
+    assert opt.evals <= opt.max_evaluations
+    assert opt.evals == opt.max_evaluations
+
+
 def test_hybrid_budget_is_shared_and_integration_runs():
     world = make_3d_static_world(
         bounds_max=(10.0, 10.0, 10.0),
