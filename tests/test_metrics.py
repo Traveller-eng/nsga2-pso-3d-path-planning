@@ -37,6 +37,12 @@ def test_igd_zero_for_identical_fronts():
     assert calculate_igd(approx, reference) == 0.0
 
 
+def test_igd_averages_reference_to_approximation_distances():
+    approximation = np.array([[0.0, 0.0]])
+    reference = np.array([[0.0, 0.0], [1.0, 0.0], [2.0, 0.0]])
+    assert np.isclose(calculate_igd(approximation, reference), 1.0)
+
+
 def test_igd_handles_empty_approximation():
     approx = np.empty((0, 3))
     reference = np.array([[0.0, 0.0, 0.0], [1.0, 1.0, 1.0]])

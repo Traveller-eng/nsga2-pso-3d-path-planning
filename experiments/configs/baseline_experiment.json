@@ -17,6 +17,11 @@
   },
   "population_size": 30,
   "max_evaluations": 300,
+  "metrics": {
+    "hypervolume_reference_point": [17.544708909506323, 1.0, 2.5112743973393745],
+    "hypervolume_reference_point_source": "Frozen from the 2-seed pilot pooled feasible objective maxima plus a 1.0 margin; retain unchanged for the controlled benchmark.",
+    "objective_space": "raw"
+  },
   "hybrid": {
     "elite_fraction": 0.15,
     "min_elites": 5,

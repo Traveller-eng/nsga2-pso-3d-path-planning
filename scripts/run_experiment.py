@@ -70,23 +70,15 @@ def feasible_objectives(population) -> np.ndarray:
     return np.vstack(rows)
 
 
-def build_reference_point(fronts: list[np.ndarray], margin: float = 1.0) -> np.ndarray:
-    """Build a shared minimization reference point from the pooled feasible objectives."""
-    valid = []
-    for front in fronts:
-        arr = np.asarray(front, dtype=float)
-        if arr.size == 0:
-            continue
-        if arr.ndim == 1:
-            arr = arr.reshape(1, -1)
-        arr = arr[np.isfinite(arr).all(axis=1)]
-        if arr.size:
-            valid.append(arr)
-    if not valid:
-        return np.array([1.0, 1.0, 1.0], dtype=float)
-
-    all_points = np.vstack(valid)
-    return np.asarray(np.max(all_points, axis=0) + margin, dtype=float)
+def get_reference_point(config: dict, n_objectives: int = 3) -> np.ndarray:
+    """Load the experiment's frozen HV reference point from its canonical config."""
+    metrics_config = config.get("metrics", {})
+    if "hypervolume_reference_point" not in metrics_config:
+        raise ValueError("Experiment config must define metrics.hypervolume_reference_point.")
+    reference_point = np.asarray(metrics_config["hypervolume_reference_point"], dtype=float)
+    if reference_point.shape != (n_objectives,) or not np.isfinite(reference_point).all():
+        raise ValueError(f"HV reference point must contain {n_objectives} finite values.")
+    return reference_point
 
 
 def compute_run_metrics(front: np.ndarray, reference_front: np.ndarray, reference_point: np.ndarray) -> dict:
@@ -242,13 +234,14 @@ def main() -> None:
             })
 
     pooled_reference = pooled_reference_front(feasible_by_run, feasible_only=True)
-    reference_point = build_reference_point(feasible_by_run)
+    reference_point = get_reference_point(config)
 
     for row in all_outputs:
         front = np.asarray(row["front"], dtype=float)
         metrics = compute_run_metrics(front, pooled_reference, reference_point)
         row.update({
             "reference_point": reference_point.tolist(),
+            "igd_reference_front": pooled_reference.tolist(),
             "pooled_reference_size": int(pooled_reference.shape[0]) if pooled_reference.size else 0,
             "hypervolume": metrics["hypervolume"],
             "igd": metrics["igd"],

@@ -34,7 +34,7 @@ def calculate_igd(
         approx, ref = _normalize_fronts(approx, ref)
 
     distances = np.array([
-        np.min(np.linalg.norm(ref - point, axis=1))
-        for point in approx
+        np.min(np.linalg.norm(approx - point, axis=1))
+        for point in ref
     ], dtype=float)
     return float(np.mean(distances))
