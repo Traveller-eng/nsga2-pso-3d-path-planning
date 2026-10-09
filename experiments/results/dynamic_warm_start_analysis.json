@@ -1,0 +1,3237 @@
+{
+  "experiment_name": "dynamic_nsga2_warm_start_vs_cold_start",
+  "seeds": [
+    11,
+    22,
+    33,
+    44,
+    55,
+    66,
+    77,
+    88,
+    99,
+    110
+  ],
+  "paired_tests": {
+    "difference_definition": "warm-start minus cold-start; negative is favorable for lower-is-better outcomes and positive is favorable for higher-is-better outcomes.",
+    "confidence_intervals": {
+      "mean": "Two-sided 95% Student-t interval on paired differences.",
+      "median": "Two-sided 95% percentile bootstrap interval using 10,000 paired-seed resamples and the frozen analysis bootstrap seed."
+    },
+    "multiple_comparison_correction": "Holm correction across all event-by-metric tests separately for each paired-test family.",
+    "primary_metrics": [
+      "best_feasible_path_length",
+      "feasibility_rate",
+      "hypervolume",
+      "igd",
+      "wall_clock_seconds"
+    ],
+    "paired_differences": [
+      {
+        "event_index": 0,
+        "metric": "wall_clock_seconds",
+        "direction": "warm_start_minus_cold_start",
+        "n": 10,
+        "mean": -0.01653661000309512,
+        "median": -0.025042249995749444,
+        "std_sample": 0.03667112859884087,
+        "q1": -0.03136000002268702,
+        "q3": -0.003552725102053955,
+        "min": -0.07808180002029985,
+        "max": 0.04454490006901324,
+        "mean_ci95": [
+          -0.04276955509601428,
+          0.009696335089824037
+        ],
+        "median_bootstrap_ci95": [
+          -0.03598779992898926,
+          0.010965549969114363
+        ],
+        "missing_warm_metric_pairs": 0,
+        "missing_cold_metric_pairs": 0,
+        "failed_pairs": 0,
+        "paired_t_test_p": 0.18761621141132392,
+        "paired_t_test_p_holm": 1.0,
+        "wilcoxon_p": 0.322265625,
+        "wilcoxon_p_holm": 1.0,
+        "seed_differences": [
+          {
+            "paired_seed": 11,
+            "warm_minus_cold": -0.03240160003770143,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 22,
+            "warm_minus_cold": -0.07808180002029985,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 33,
+            "warm_minus_cold": -0.028235199977643788,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 44,
+            "warm_minus_cold": 0.0007013998692855239,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 55,
+            "warm_minus_cold": -0.02754589996766299,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 66,
+            "warm_minus_cold": 0.03824619995430112,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 77,
+            "warm_minus_cold": 0.04454490006901324,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 88,
+            "warm_minus_cold": -0.043740399880334735,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 99,
+            "warm_minus_cold": -0.022538600023835897,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 110,
+            "warm_minus_cold": -0.016315100016072392,
+            "status": "paired"
+          }
+        ],
+        "included_in_primary_test_family": true
+      },
+      {
+        "event_index": 0,
+        "metric": "feasibility_rate",
+        "direction": "warm_start_minus_cold_start",
+        "n": 10,
+        "mean": 0.0,
+        "median": 0.0,
+        "std_sample": 0.0,
+        "q1": 0.0,
+        "q3": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "mean_ci95": [
+          0.0,
+          0.0
+        ],
+        "median_bootstrap_ci95": [
+          0.0,
+          0.0
+        ],
+        "missing_warm_metric_pairs": 0,
+        "missing_cold_metric_pairs": 0,
+        "failed_pairs": 0,
+        "paired_t_test_p": 1.0,
+        "paired_t_test_p_holm": 1.0,
+        "wilcoxon_p": 1.0,
+        "wilcoxon_p_holm": 1.0,
+        "seed_differences": [
+          {
+            "paired_seed": 11,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 22,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 33,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 44,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 55,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 66,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 77,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 88,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 99,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 110,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          }
+        ],
+        "included_in_primary_test_family": true
+      },
+      {
+        "event_index": 0,
+        "metric": "best_feasible_path_length",
+        "direction": "warm_start_minus_cold_start",
+        "n": 1,
+        "mean": 0.0,
+        "median": 0.0,
+        "std_sample": null,
+        "q1": 0.0,
+        "q3": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "mean_ci95": null,
+        "median_bootstrap_ci95": null,
+        "missing_warm_metric_pairs": 9,
+        "missing_cold_metric_pairs": 9,
+        "failed_pairs": 0,
+        "paired_t_test_p": null,
+        "paired_t_test_p_holm": null,
+        "wilcoxon_p": null,
+        "wilcoxon_p_holm": null,
+        "seed_differences": [
+          {
+            "paired_seed": 11,
+            "warm_minus_cold": null,
+            "status": "undefined_metric"
+          },
+          {
+            "paired_seed": 22,
+            "warm_minus_cold": null,
+            "status": "undefined_metric"
+          },
+          {
+            "paired_seed": 33,
+            "warm_minus_cold": null,
+            "status": "undefined_metric"
+          },
+          {
+            "paired_seed": 44,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 55,
+            "warm_minus_cold": null,
+            "status": "undefined_metric"
+          },
+          {
+            "paired_seed": 66,
+            "warm_minus_cold": null,
+            "status": "undefined_metric"
+          },
+          {
+            "paired_seed": 77,
+            "warm_minus_cold": null,
+            "status": "undefined_metric"
+          },
+          {
+            "paired_seed": 88,
+            "warm_minus_cold": null,
+            "status": "undefined_metric"
+          },
+          {
+            "paired_seed": 99,
+            "warm_minus_cold": null,
+            "status": "undefined_metric"
+          },
+          {
+            "paired_seed": 110,
+            "warm_minus_cold": null,
+            "status": "undefined_metric"
+          }
+        ],
+        "included_in_primary_test_family": true
+      },
+      {
+        "event_index": 0,
+        "metric": "hypervolume",
+        "direction": "warm_start_minus_cold_start",
+        "n": 10,
+        "mean": 0.0,
+        "median": 0.0,
+        "std_sample": 0.0,
+        "q1": 0.0,
+        "q3": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "mean_ci95": [
+          0.0,
+          0.0
+        ],
+        "median_bootstrap_ci95": [
+          0.0,
+          0.0
+        ],
+        "missing_warm_metric_pairs": 0,
+        "missing_cold_metric_pairs": 0,
+        "failed_pairs": 0,
+        "paired_t_test_p": 1.0,
+        "paired_t_test_p_holm": 1.0,
+        "wilcoxon_p": 1.0,
+        "wilcoxon_p_holm": 1.0,
+        "seed_differences": [
+          {
+            "paired_seed": 11,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 22,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 33,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 44,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 55,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 66,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 77,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 88,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 99,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 110,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          }
+        ],
+        "included_in_primary_test_family": true
+      },
+      {
+        "event_index": 0,
+        "metric": "igd",
+        "direction": "warm_start_minus_cold_start",
+        "n": 1,
+        "mean": 0.0,
+        "median": 0.0,
+        "std_sample": null,
+        "q1": 0.0,
+        "q3": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "mean_ci95": null,
+        "median_bootstrap_ci95": null,
+        "missing_warm_metric_pairs": 9,
+        "missing_cold_metric_pairs": 9,
+        "failed_pairs": 0,
+        "paired_t_test_p": null,
+        "paired_t_test_p_holm": null,
+        "wilcoxon_p": null,
+        "wilcoxon_p_holm": null,
+        "seed_differences": [
+          {
+            "paired_seed": 11,
+            "warm_minus_cold": null,
+            "status": "undefined_metric"
+          },
+          {
+            "paired_seed": 22,
+            "warm_minus_cold": null,
+            "status": "undefined_metric"
+          },
+          {
+            "paired_seed": 33,
+            "warm_minus_cold": null,
+            "status": "undefined_metric"
+          },
+          {
+            "paired_seed": 44,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 55,
+            "warm_minus_cold": null,
+            "status": "undefined_metric"
+          },
+          {
+            "paired_seed": 66,
+            "warm_minus_cold": null,
+            "status": "undefined_metric"
+          },
+          {
+            "paired_seed": 77,
+            "warm_minus_cold": null,
+            "status": "undefined_metric"
+          },
+          {
+            "paired_seed": 88,
+            "warm_minus_cold": null,
+            "status": "undefined_metric"
+          },
+          {
+            "paired_seed": 99,
+            "warm_minus_cold": null,
+            "status": "undefined_metric"
+          },
+          {
+            "paired_seed": 110,
+            "warm_minus_cold": null,
+            "status": "undefined_metric"
+          }
+        ],
+        "included_in_primary_test_family": true
+      },
+      {
+        "event_index": 0,
+        "metric": "minimum_clearance",
+        "direction": "warm_start_minus_cold_start",
+        "n": 10,
+        "mean": 0.0,
+        "median": 0.0,
+        "std_sample": 0.0,
+        "q1": 0.0,
+        "q3": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "mean_ci95": [
+          0.0,
+          0.0
+        ],
+        "median_bootstrap_ci95": [
+          0.0,
+          0.0
+        ],
+        "missing_warm_metric_pairs": 0,
+        "missing_cold_metric_pairs": 0,
+        "failed_pairs": 0,
+        "paired_t_test_p": 1.0,
+        "paired_t_test_p_holm": 1.0,
+        "wilcoxon_p": 1.0,
+        "wilcoxon_p_holm": 1.0,
+        "seed_differences": [
+          {
+            "paired_seed": 11,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 22,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 33,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 44,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 55,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 66,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 77,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 88,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 99,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 110,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          }
+        ],
+        "included_in_primary_test_family": false
+      },
+      {
+        "event_index": 0,
+        "metric": "minimum_clearance_risk_objective",
+        "direction": "warm_start_minus_cold_start",
+        "n": 10,
+        "mean": 0.0,
+        "median": 0.0,
+        "std_sample": 0.0,
+        "q1": 0.0,
+        "q3": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "mean_ci95": [
+          0.0,
+          0.0
+        ],
+        "median_bootstrap_ci95": [
+          0.0,
+          0.0
+        ],
+        "missing_warm_metric_pairs": 0,
+        "missing_cold_metric_pairs": 0,
+        "failed_pairs": 0,
+        "paired_t_test_p": 1.0,
+        "paired_t_test_p_holm": 1.0,
+        "wilcoxon_p": 1.0,
+        "wilcoxon_p_holm": 1.0,
+        "seed_differences": [
+          {
+            "paired_seed": 11,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 22,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 33,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 44,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 55,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 66,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 77,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 88,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 99,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 110,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          }
+        ],
+        "included_in_primary_test_family": false
+      },
+      {
+        "event_index": 0,
+        "metric": "minimum_snap_objective",
+        "direction": "warm_start_minus_cold_start",
+        "n": 10,
+        "mean": 0.0,
+        "median": 0.0,
+        "std_sample": 0.0,
+        "q1": 0.0,
+        "q3": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "mean_ci95": [
+          0.0,
+          0.0
+        ],
+        "median_bootstrap_ci95": [
+          0.0,
+          0.0
+        ],
+        "missing_warm_metric_pairs": 0,
+        "missing_cold_metric_pairs": 0,
+        "failed_pairs": 0,
+        "paired_t_test_p": 1.0,
+        "paired_t_test_p_holm": 1.0,
+        "wilcoxon_p": 1.0,
+        "wilcoxon_p_holm": 1.0,
+        "seed_differences": [
+          {
+            "paired_seed": 11,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 22,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 33,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 44,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 55,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 66,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 77,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 88,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 99,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 110,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          }
+        ],
+        "included_in_primary_test_family": false
+      },
+      {
+        "event_index": 0,
+        "metric": "minimum_total_violation",
+        "direction": "warm_start_minus_cold_start",
+        "n": 10,
+        "mean": 0.0,
+        "median": 0.0,
+        "std_sample": 0.0,
+        "q1": 0.0,
+        "q3": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "mean_ci95": [
+          0.0,
+          0.0
+        ],
+        "median_bootstrap_ci95": [
+          0.0,
+          0.0
+        ],
+        "missing_warm_metric_pairs": 0,
+        "missing_cold_metric_pairs": 0,
+        "failed_pairs": 0,
+        "paired_t_test_p": 1.0,
+        "paired_t_test_p_holm": 1.0,
+        "wilcoxon_p": 1.0,
+        "wilcoxon_p_holm": 1.0,
+        "seed_differences": [
+          {
+            "paired_seed": 11,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 22,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 33,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 44,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 55,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 66,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 77,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 88,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 99,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 110,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          }
+        ],
+        "included_in_primary_test_family": false
+      },
+      {
+        "event_index": 0,
+        "metric": "mean_total_violation",
+        "direction": "warm_start_minus_cold_start",
+        "n": 10,
+        "mean": 0.0,
+        "median": 0.0,
+        "std_sample": 0.0,
+        "q1": 0.0,
+        "q3": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "mean_ci95": [
+          0.0,
+          0.0
+        ],
+        "median_bootstrap_ci95": [
+          0.0,
+          0.0
+        ],
+        "missing_warm_metric_pairs": 0,
+        "missing_cold_metric_pairs": 0,
+        "failed_pairs": 0,
+        "paired_t_test_p": 1.0,
+        "paired_t_test_p_holm": 1.0,
+        "wilcoxon_p": 1.0,
+        "wilcoxon_p_holm": 1.0,
+        "seed_differences": [
+          {
+            "paired_seed": 11,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 22,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 33,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 44,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 55,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 66,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 77,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 88,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 99,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 110,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          }
+        ],
+        "included_in_primary_test_family": false
+      },
+      {
+        "event_index": 1,
+        "metric": "wall_clock_seconds",
+        "direction": "warm_start_minus_cold_start",
+        "n": 10,
+        "mean": -0.011306850018445402,
+        "median": -0.017233300080988556,
+        "std_sample": 0.02792006583325175,
+        "q1": -0.03144442493794486,
+        "q3": 0.013668324943864718,
+        "min": -0.046503699966706336,
+        "max": 0.03335519996471703,
+        "mean_ci95": [
+          -0.03127966192741764,
+          0.008665961890526836
+        ],
+        "median_bootstrap_ci95": [
+          -0.034510950034018606,
+          0.021061199950054288
+        ],
+        "missing_warm_metric_pairs": 0,
+        "missing_cold_metric_pairs": 0,
+        "failed_pairs": 0,
+        "paired_t_test_p": 0.23233858175041894,
+        "paired_t_test_p_holm": 1.0,
+        "wilcoxon_p": 0.322265625,
+        "wilcoxon_p_holm": 1.0,
+        "seed_differences": [
+          {
+            "paired_seed": 11,
+            "warm_minus_cold": -0.017356600030325353,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 22,
+            "warm_minus_cold": -0.01711000013165176,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 33,
+            "warm_minus_cold": 0.03335519996471703,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 44,
+            "warm_minus_cold": 0.022563900100067258,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 55,
+            "warm_minus_cold": -0.03154629992786795,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 66,
+            "warm_minus_cold": -0.046503699966706336,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 77,
+            "warm_minus_cold": -0.008510300074703991,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 88,
+            "warm_minus_cold": -0.03113879996817559,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 99,
+            "warm_minus_cold": -0.03788310009986162,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 110,
+            "warm_minus_cold": 0.021061199950054288,
+            "status": "paired"
+          }
+        ],
+        "included_in_primary_test_family": true
+      },
+      {
+        "event_index": 1,
+        "metric": "feasibility_rate",
+        "direction": "warm_start_minus_cold_start",
+        "n": 10,
+        "mean": 0.09999999999999998,
+        "median": 0.0,
+        "std_sample": 0.2748737083745107,
+        "q1": -0.037500000000000006,
+        "q3": 0.15000000000000002,
+        "min": -0.25,
+        "max": 0.6499999999999999,
+        "mean_ci95": [
+          -0.09663280555547277,
+          0.2966328055554727
+        ],
+        "median_bootstrap_ci95": [
+          -0.05,
+          0.25
+        ],
+        "missing_warm_metric_pairs": 0,
+        "missing_cold_metric_pairs": 0,
+        "failed_pairs": 0,
+        "paired_t_test_p": 0.27960869398665095,
+        "paired_t_test_p_holm": 1.0,
+        "wilcoxon_p": 0.75,
+        "wilcoxon_p_holm": 1.0,
+        "seed_differences": [
+          {
+            "paired_seed": 11,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 22,
+            "warm_minus_cold": -0.25,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 33,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 44,
+            "warm_minus_cold": 0.5,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 55,
+            "warm_minus_cold": 0.6499999999999999,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 66,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 77,
+            "warm_minus_cold": -0.05,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 88,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 99,
+            "warm_minus_cold": -0.05,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 110,
+            "warm_minus_cold": 0.2,
+            "status": "paired"
+          }
+        ],
+        "included_in_primary_test_family": true
+      },
+      {
+        "event_index": 1,
+        "metric": "best_feasible_path_length",
+        "direction": "warm_start_minus_cold_start",
+        "n": 7,
+        "mean": 0.10991906215176073,
+        "median": 0.053875009752655245,
+        "std_sample": 0.21882029192389485,
+        "q1": 0.0,
+        "q3": 0.23820099398740702,
+        "min": -0.19350577896941346,
+        "max": 0.43266221630426926,
+        "mean_ci95": [
+          -0.09245595447976673,
+          0.3122940787832882
+        ],
+        "median_bootstrap_ci95": [
+          0.0,
+          0.3623909671239325
+        ],
+        "missing_warm_metric_pairs": 3,
+        "missing_cold_metric_pairs": 1,
+        "failed_pairs": 0,
+        "paired_t_test_p": 0.23214137460585296,
+        "paired_t_test_p_holm": 1.0,
+        "wilcoxon_p": 0.25,
+        "wilcoxon_p_holm": 1.0,
+        "seed_differences": [
+          {
+            "paired_seed": 11,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 22,
+            "warm_minus_cold": null,
+            "status": "undefined_metric"
+          },
+          {
+            "paired_seed": 33,
+            "warm_minus_cold": 0.3623909671239325,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 44,
+            "warm_minus_cold": 0.43266221630426926,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 55,
+            "warm_minus_cold": -0.19350577896941346,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 66,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 77,
+            "warm_minus_cold": 0.11401102085088155,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 88,
+            "warm_minus_cold": null,
+            "status": "undefined_metric"
+          },
+          {
+            "paired_seed": 99,
+            "warm_minus_cold": null,
+            "status": "undefined_metric"
+          },
+          {
+            "paired_seed": 110,
+            "warm_minus_cold": 0.053875009752655245,
+            "status": "paired"
+          }
+        ],
+        "included_in_primary_test_family": true
+      },
+      {
+        "event_index": 1,
+        "metric": "hypervolume",
+        "direction": "warm_start_minus_cold_start",
+        "n": 10,
+        "mean": -0.18905230179928384,
+        "median": 0.0,
+        "std_sample": 0.4012722271400733,
+        "q1": -0.11444860210552002,
+        "q3": 0.01606783377964044,
+        "min": -0.9705486444353605,
+        "max": 0.07493106084683954,
+        "mean_ci95": [
+          -0.4761051606581645,
+          0.09800055705959682
+        ],
+        "median_bootstrap_ci95": [
+          -0.45806097414833397,
+          0.02562042428459199
+        ],
+        "missing_warm_metric_pairs": 0,
+        "missing_cold_metric_pairs": 0,
+        "failed_pairs": 0,
+        "paired_t_test_p": 0.17044906351286546,
+        "paired_t_test_p_holm": 1.0,
+        "wilcoxon_p": 0.546875,
+        "wilcoxon_p_holm": 1.0,
+        "seed_differences": [
+          {
+            "paired_seed": 11,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 22,
+            "warm_minus_cold": -0.9126718790236494,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 33,
+            "warm_minus_cold": 0.07493106084683954,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 44,
+            "warm_minus_cold": 0.02142377837285392,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 55,
+            "warm_minus_cold": -0.0034500692730184968,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 66,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 77,
+            "warm_minus_cold": 0.05124084856918398,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 88,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 99,
+            "warm_minus_cold": -0.9705486444353605,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 110,
+            "warm_minus_cold": -0.1514481130496872,
+            "status": "paired"
+          }
+        ],
+        "included_in_primary_test_family": true
+      },
+      {
+        "event_index": 1,
+        "metric": "igd",
+        "direction": "warm_start_minus_cold_start",
+        "n": 7,
+        "mean": 0.0007276764745222454,
+        "median": -0.007572181897195959,
+        "std_sample": 0.06172731561434313,
+        "q1": -0.023278180613512132,
+        "q3": 0.0,
+        "min": -0.07028021528783623,
+        "max": 0.12950249373371217,
+        "mean_ci95": [
+          -0.05636056892648904,
+          0.05781592187553353
+        ],
+        "median_bootstrap_ci95": [
+          -0.025922578549509002,
+          0.0
+        ],
+        "missing_warm_metric_pairs": 3,
+        "missing_cold_metric_pairs": 1,
+        "failed_pairs": 0,
+        "paired_t_test_p": 0.9761299421087387,
+        "paired_t_test_p_holm": 1.0,
+        "wilcoxon_p": 0.4375,
+        "wilcoxon_p_holm": 1.0,
+        "seed_differences": [
+          {
+            "paired_seed": 11,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 22,
+            "warm_minus_cold": null,
+            "status": "undefined_metric"
+          },
+          {
+            "paired_seed": 33,
+            "warm_minus_cold": -0.07028021528783623,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 44,
+            "warm_minus_cold": -0.007572181897195959,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 55,
+            "warm_minus_cold": -0.02063378267751526,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 66,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 77,
+            "warm_minus_cold": -0.025922578549509002,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 88,
+            "warm_minus_cold": null,
+            "status": "undefined_metric"
+          },
+          {
+            "paired_seed": 99,
+            "warm_minus_cold": null,
+            "status": "undefined_metric"
+          },
+          {
+            "paired_seed": 110,
+            "warm_minus_cold": 0.12950249373371217,
+            "status": "paired"
+          }
+        ],
+        "included_in_primary_test_family": true
+      },
+      {
+        "event_index": 1,
+        "metric": "minimum_clearance",
+        "direction": "warm_start_minus_cold_start",
+        "n": 10,
+        "mean": 0.03180422009145423,
+        "median": 0.012948051609536493,
+        "std_sample": 0.0835722091745038,
+        "q1": -0.028634682090693864,
+        "q3": 0.09638882663701631,
+        "min": -0.061826929892338844,
+        "max": 0.18088073996576037,
+        "mean_ci95": [
+          -0.027979736888752008,
+          0.09158817707166046
+        ],
+        "median_bootstrap_ci95": [
+          -0.03817957612092515,
+          0.11957797072238385
+        ],
+        "missing_warm_metric_pairs": 0,
+        "missing_cold_metric_pairs": 0,
+        "failed_pairs": 0,
+        "paired_t_test_p": 0.25950624539916667,
+        "paired_t_test_p_holm": 1.0,
+        "wilcoxon_p": 0.4609375,
+        "wilcoxon_p_holm": 1.0,
+        "seed_differences": [
+          {
+            "paired_seed": 11,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 22,
+            "warm_minus_cold": -0.03817957612092515,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 33,
+            "warm_minus_cold": 0.026821394380913688,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 44,
+            "warm_minus_cold": 0.11957797072238385,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 55,
+            "warm_minus_cold": 0.1251258202254768,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 66,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 77,
+            "warm_minus_cold": 0.025896103219072986,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 88,
+            "warm_minus_cold": 0.18088073996576037,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 99,
+            "warm_minus_cold": -0.061826929892338844,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 110,
+            "warm_minus_cold": -0.060253321585801434,
+            "status": "paired"
+          }
+        ],
+        "included_in_primary_test_family": false
+      },
+      {
+        "event_index": 1,
+        "metric": "minimum_clearance_risk_objective",
+        "direction": "warm_start_minus_cold_start",
+        "n": 10,
+        "mean": 0.009655398916394895,
+        "median": 0.00046175706368226793,
+        "std_sample": 0.05528598294440864,
+        "q1": -0.008566768311838393,
+        "q3": 0.01112187476915365,
+        "min": -0.06338706534600093,
+        "max": 0.15024652786072945,
+        "mean_ci95": [
+          -0.029893810786264206,
+          0.04920460861905399
+        ],
+        "median_bootstrap_ci95": [
+          -0.014033707654001118,
+          0.01852179895241918
+        ],
+        "missing_warm_metric_pairs": 0,
+        "missing_cold_metric_pairs": 0,
+        "failed_pairs": 0,
+        "paired_t_test_p": 0.5942074537093794,
+        "paired_t_test_p_holm": 1.0,
+        "wilcoxon_p": 0.8046875,
+        "wilcoxon_p_holm": 1.0,
+        "seed_differences": [
+          {
+            "paired_seed": 11,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 22,
+            "warm_minus_cold": 0.011217187674137628,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 33,
+            "warm_minus_cold": 0.026207661850636638,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 44,
+            "warm_minus_cold": -0.011422357749117857,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 55,
+            "warm_minus_cold": 0.010835936054201722,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 66,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 77,
+            "warm_minus_cold": -0.028067415308002237,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 88,
+            "warm_minus_cold": -0.06338706534600093,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 99,
+            "warm_minus_cold": 0.0009235141273645359,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 110,
+            "warm_minus_cold": 0.15024652786072945,
+            "status": "paired"
+          }
+        ],
+        "included_in_primary_test_family": false
+      },
+      {
+        "event_index": 1,
+        "metric": "minimum_snap_objective",
+        "direction": "warm_start_minus_cold_start",
+        "n": 10,
+        "mean": 0.019124835650204453,
+        "median": -0.00794999546244557,
+        "std_sample": 0.3148338873770881,
+        "q1": -0.2136287856399771,
+        "q3": 0.18649638251285278,
+        "min": -0.39727685710387617,
+        "max": 0.5713441766115509,
+        "mean_ci95": [
+          -0.20609375991858597,
+          0.24434343121899488
+        ],
+        "median_bootstrap_ci95": [
+          -0.22574730349269145,
+          0.24866184335047037
+        ],
+        "missing_warm_metric_pairs": 0,
+        "missing_cold_metric_pairs": 0,
+        "failed_pairs": 0,
+        "paired_t_test_p": 0.8519320618294275,
+        "paired_t_test_p_holm": 1.0,
+        "wilcoxon_p": 0.9609375,
+        "wilcoxon_p_holm": 1.0,
+        "seed_differences": [
+          {
+            "paired_seed": 11,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 22,
+            "warm_minus_cold": -0.2594358588232799,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 33,
+            "warm_minus_cold": 0.5713441766115509,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 44,
+            "warm_minus_cold": -0.01589999092489114,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 55,
+            "warm_minus_cold": 0.24866184335047037,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 66,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 77,
+            "warm_minus_cold": -0.177273232081834,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 88,
+            "warm_minus_cold": -0.22574730349269145,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 99,
+            "warm_minus_cold": -0.39727685710387617,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 110,
+            "warm_minus_cold": 0.4468755789665959,
+            "status": "paired"
+          }
+        ],
+        "included_in_primary_test_family": false
+      },
+      {
+        "event_index": 1,
+        "metric": "minimum_total_violation",
+        "direction": "warm_start_minus_cold_start",
+        "n": 10,
+        "mean": 0.05124759985948675,
+        "median": 0.0,
+        "std_sample": 0.08802567260308596,
+        "q1": 0.0,
+        "q3": 0.07296469132696659,
+        "min": 0.0,
+        "max": 0.22070897228983172,
+        "mean_ci95": [
+          -0.011722172939843511,
+          0.11421737265881701
+        ],
+        "median_bootstrap_ci95": [
+          0.0,
+          0.09728625510262212
+        ],
+        "missing_warm_metric_pairs": 0,
+        "missing_cold_metric_pairs": 0,
+        "failed_pairs": 0,
+        "paired_t_test_p": 0.09874758456743372,
+        "paired_t_test_p_holm": 1.0,
+        "wilcoxon_p": 0.25,
+        "wilcoxon_p_holm": 1.0,
+        "seed_differences": [
+          {
+            "paired_seed": 11,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 22,
+            "warm_minus_cold": 0.19448077120241364,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 33,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 44,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 55,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 66,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 77,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 88,
+            "warm_minus_cold": 0.22070897228983172,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 99,
+            "warm_minus_cold": 0.09728625510262212,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 110,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          }
+        ],
+        "included_in_primary_test_family": false
+      },
+      {
+        "event_index": 1,
+        "metric": "mean_total_violation",
+        "direction": "warm_start_minus_cold_start",
+        "n": 10,
+        "mean": -0.015548183037636965,
+        "median": 0.0031743443356265742,
+        "std_sample": 0.07925787030309302,
+        "q1": -0.016019771587250937,
+        "q3": 0.014537742442974264,
+        "min": -0.1773358173675554,
+        "max": 0.07466299314345848,
+        "mean_ci95": [
+          -0.07224584791148181,
+          0.04114948183620788
+        ],
+        "median_bootstrap_ci95": [
+          -0.0650465890516963,
+          0.035236765459955965
+        ],
+        "missing_warm_metric_pairs": 0,
+        "missing_cold_metric_pairs": 0,
+        "failed_pairs": 0,
+        "paired_t_test_p": 0.5504101188096964,
+        "paired_t_test_p_holm": 1.0,
+        "wilcoxon_p": 0.9609375,
+        "wilcoxon_p_holm": 1.0,
+        "seed_differences": [
+          {
+            "paired_seed": 11,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 22,
+            "warm_minus_cold": 0.06412484224865878,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 33,
+            "warm_minus_cold": 0.0063486886712531485,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 44,
+            "warm_minus_cold": -0.02135969544966792,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 55,
+            "warm_minus_cold": -0.1773358173675554,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 66,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 77,
+            "warm_minus_cold": 0.01318001983536532,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 88,
+            "warm_minus_cold": -0.1300931781033926,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 99,
+            "warm_minus_cold": 0.07466299314345848,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 110,
+            "warm_minus_cold": 0.014990316645510579,
+            "status": "paired"
+          }
+        ],
+        "included_in_primary_test_family": false
+      },
+      {
+        "event_index": 2,
+        "metric": "wall_clock_seconds",
+        "direction": "warm_start_minus_cold_start",
+        "n": 10,
+        "mean": -0.004434699995908886,
+        "median": -0.007345149992033839,
+        "std_sample": 0.03742042916707128,
+        "q1": -0.0213205250329338,
+        "q3": 0.01798807503655553,
+        "min": -0.08328240003902465,
+        "max": 0.052392200101166964,
+        "mean_ci95": [
+          -0.03120366242495941,
+          0.022334262433141638
+        ],
+        "median_bootstrap_ci95": [
+          -0.023135600029490888,
+          0.02223845006665215
+        ],
+        "missing_warm_metric_pairs": 0,
+        "missing_cold_metric_pairs": 0,
+        "failed_pairs": 0,
+        "paired_t_test_p": 0.7165158668779457,
+        "paired_t_test_p_holm": 1.0,
+        "wilcoxon_p": 0.845703125,
+        "wilcoxon_p_holm": 1.0,
+        "seed_differences": [
+          {
+            "paired_seed": 11,
+            "warm_minus_cold": -0.08328240003902465,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 22,
+            "warm_minus_cold": 0.031012300052680075,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 33,
+            "warm_minus_cold": 0.052392200101166964,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 44,
+            "warm_minus_cold": 0.019495900021865964,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 55,
+            "warm_minus_cold": -0.01587530004326254,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 66,
+            "warm_minus_cold": -0.023135600029490888,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 77,
+            "warm_minus_cold": 0.013464600080624223,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 88,
+            "warm_minus_cold": -0.02372840011958033,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 99,
+            "warm_minus_cold": -0.015621399972587824,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 110,
+            "warm_minus_cold": 0.0009310999885201454,
+            "status": "paired"
+          }
+        ],
+        "included_in_primary_test_family": true
+      },
+      {
+        "event_index": 2,
+        "metric": "feasibility_rate",
+        "direction": "warm_start_minus_cold_start",
+        "n": 10,
+        "mean": 0.14,
+        "median": 0.025,
+        "std_sample": 0.3134042472944842,
+        "q1": 0.0,
+        "q3": 0.08750000000000001,
+        "min": -0.05,
+        "max": 1.0,
+        "mean_ci95": [
+          -0.08419589266264724,
+          0.3641958926626473
+        ],
+        "median_bootstrap_ci95": [
+          0.0,
+          0.15
+        ],
+        "missing_warm_metric_pairs": 0,
+        "missing_cold_metric_pairs": 0,
+        "failed_pairs": 0,
+        "paired_t_test_p": 0.19140305469903662,
+        "paired_t_test_p_holm": 1.0,
+        "wilcoxon_p": 0.125,
+        "wilcoxon_p_holm": 1.0,
+        "seed_differences": [
+          {
+            "paired_seed": 11,
+            "warm_minus_cold": 0.1,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 22,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 33,
+            "warm_minus_cold": 0.25,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 44,
+            "warm_minus_cold": 1.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 55,
+            "warm_minus_cold": 0.05,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 66,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 77,
+            "warm_minus_cold": 0.05,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 88,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 99,
+            "warm_minus_cold": -0.05,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 110,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          }
+        ],
+        "included_in_primary_test_family": true
+      },
+      {
+        "event_index": 2,
+        "metric": "best_feasible_path_length",
+        "direction": "warm_start_minus_cold_start",
+        "n": 0,
+        "mean": null,
+        "median": null,
+        "std_sample": null,
+        "q1": null,
+        "q3": null,
+        "min": null,
+        "max": null,
+        "mean_ci95": null,
+        "median_bootstrap_ci95": null,
+        "missing_warm_metric_pairs": 5,
+        "missing_cold_metric_pairs": 9,
+        "failed_pairs": 0,
+        "paired_t_test_p": null,
+        "paired_t_test_p_holm": null,
+        "wilcoxon_p": null,
+        "wilcoxon_p_holm": null,
+        "seed_differences": [
+          {
+            "paired_seed": 11,
+            "warm_minus_cold": null,
+            "status": "undefined_metric"
+          },
+          {
+            "paired_seed": 22,
+            "warm_minus_cold": null,
+            "status": "undefined_metric"
+          },
+          {
+            "paired_seed": 33,
+            "warm_minus_cold": null,
+            "status": "undefined_metric"
+          },
+          {
+            "paired_seed": 44,
+            "warm_minus_cold": null,
+            "status": "undefined_metric"
+          },
+          {
+            "paired_seed": 55,
+            "warm_minus_cold": null,
+            "status": "undefined_metric"
+          },
+          {
+            "paired_seed": 66,
+            "warm_minus_cold": null,
+            "status": "undefined_metric"
+          },
+          {
+            "paired_seed": 77,
+            "warm_minus_cold": null,
+            "status": "undefined_metric"
+          },
+          {
+            "paired_seed": 88,
+            "warm_minus_cold": null,
+            "status": "undefined_metric"
+          },
+          {
+            "paired_seed": 99,
+            "warm_minus_cold": null,
+            "status": "undefined_metric"
+          },
+          {
+            "paired_seed": 110,
+            "warm_minus_cold": null,
+            "status": "undefined_metric"
+          }
+        ],
+        "included_in_primary_test_family": true
+      },
+      {
+        "event_index": 2,
+        "metric": "hypervolume",
+        "direction": "warm_start_minus_cold_start",
+        "n": 10,
+        "mean": 0.35760608313768677,
+        "median": 0.39847235179050405,
+        "std_sample": 0.6203146528916417,
+        "q1": 0.0,
+        "q3": 0.8787561951510706,
+        "min": -0.8734389505792893,
+        "max": 0.9903298629744665,
+        "mean_ci95": [
+          -0.08614028768314486,
+          0.8013524539585184
+        ],
+        "median_bootstrap_ci95": [
+          0.0,
+          0.890830035996713
+        ],
+        "missing_warm_metric_pairs": 0,
+        "missing_cold_metric_pairs": 0,
+        "failed_pairs": 0,
+        "paired_t_test_p": 0.1016142748942483,
+        "paired_t_test_p_holm": 1.0,
+        "wilcoxon_p": 0.125,
+        "wilcoxon_p_holm": 1.0,
+        "seed_differences": [
+          {
+            "paired_seed": 11,
+            "warm_minus_cold": 0.8805651434072563,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 22,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 33,
+            "warm_minus_cold": 0.9083307216109123,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 44,
+            "warm_minus_cold": 0.9903298629744665,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 55,
+            "warm_minus_cold": 0.8733293503825136,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 66,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 77,
+            "warm_minus_cold": 0.7969447035810081,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 88,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 99,
+            "warm_minus_cold": -0.8734389505792893,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 110,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          }
+        ],
+        "included_in_primary_test_family": true
+      },
+      {
+        "event_index": 2,
+        "metric": "igd",
+        "direction": "warm_start_minus_cold_start",
+        "n": 0,
+        "mean": null,
+        "median": null,
+        "std_sample": null,
+        "q1": null,
+        "q3": null,
+        "min": null,
+        "max": null,
+        "mean_ci95": null,
+        "median_bootstrap_ci95": null,
+        "missing_warm_metric_pairs": 5,
+        "missing_cold_metric_pairs": 9,
+        "failed_pairs": 0,
+        "paired_t_test_p": null,
+        "paired_t_test_p_holm": null,
+        "wilcoxon_p": null,
+        "wilcoxon_p_holm": null,
+        "seed_differences": [
+          {
+            "paired_seed": 11,
+            "warm_minus_cold": null,
+            "status": "undefined_metric"
+          },
+          {
+            "paired_seed": 22,
+            "warm_minus_cold": null,
+            "status": "undefined_metric"
+          },
+          {
+            "paired_seed": 33,
+            "warm_minus_cold": null,
+            "status": "undefined_metric"
+          },
+          {
+            "paired_seed": 44,
+            "warm_minus_cold": null,
+            "status": "undefined_metric"
+          },
+          {
+            "paired_seed": 55,
+            "warm_minus_cold": null,
+            "status": "undefined_metric"
+          },
+          {
+            "paired_seed": 66,
+            "warm_minus_cold": null,
+            "status": "undefined_metric"
+          },
+          {
+            "paired_seed": 77,
+            "warm_minus_cold": null,
+            "status": "undefined_metric"
+          },
+          {
+            "paired_seed": 88,
+            "warm_minus_cold": null,
+            "status": "undefined_metric"
+          },
+          {
+            "paired_seed": 99,
+            "warm_minus_cold": null,
+            "status": "undefined_metric"
+          },
+          {
+            "paired_seed": 110,
+            "warm_minus_cold": null,
+            "status": "undefined_metric"
+          }
+        ],
+        "included_in_primary_test_family": true
+      },
+      {
+        "event_index": 2,
+        "metric": "minimum_clearance",
+        "direction": "warm_start_minus_cold_start",
+        "n": 10,
+        "mean": 0.43999324567877346,
+        "median": 0.4112210086031596,
+        "std_sample": 0.17950558673898875,
+        "q1": 0.3204471405464622,
+        "q3": 0.6102878890216346,
+        "min": 0.11931058993259613,
+        "max": 0.6739816373600284,
+        "mean_ci95": [
+          0.3115826845447217,
+          0.5684038068128252
+        ],
+        "median_bootstrap_ci95": [
+          0.3112641734199073,
+          0.6280975596406584
+        ],
+        "missing_warm_metric_pairs": 0,
+        "missing_cold_metric_pairs": 0,
+        "failed_pairs": 0,
+        "paired_t_test_p": 2.8465227839719946e-05,
+        "paired_t_test_p_holm": 0.0008539568351915984,
+        "wilcoxon_p": 0.001953125,
+        "wilcoxon_p_holm": 0.06640625,
+        "seed_differences": [
+          {
+            "paired_seed": 11,
+            "warm_minus_cold": 0.6342453336999518,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 22,
+            "warm_minus_cold": 0.34799604192612676,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 33,
+            "warm_minus_cold": 0.4326965229300668,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 44,
+            "warm_minus_cold": 0.6280975596406584,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 55,
+            "warm_minus_cold": 0.305736226437584,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 66,
+            "warm_minus_cold": 0.3897454942762524,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 77,
+            "warm_minus_cold": 0.6739816373600284,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 88,
+            "warm_minus_cold": 0.5568588771645631,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 99,
+            "warm_minus_cold": 0.11931058993259613,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 110,
+            "warm_minus_cold": 0.3112641734199073,
+            "status": "paired"
+          }
+        ],
+        "included_in_primary_test_family": false
+      },
+      {
+        "event_index": 2,
+        "metric": "minimum_clearance_risk_objective",
+        "direction": "warm_start_minus_cold_start",
+        "n": 10,
+        "mean": -0.08879981500906879,
+        "median": -0.10500801018269681,
+        "std_sample": 0.06591350840076178,
+        "q1": -0.12582231463131624,
+        "q3": -0.053156430992512854,
+        "min": -0.1749391468167965,
+        "max": 0.042449617776459336,
+        "mean_ci95": [
+          -0.13595149844030915,
+          -0.04164813157782843
+        ],
+        "median_bootstrap_ci95": [
+          -0.14056062385573329,
+          -0.041905992969307845
+        ],
+        "missing_warm_metric_pairs": 0,
+        "missing_cold_metric_pairs": 0,
+        "failed_pairs": 0,
+        "paired_t_test_p": 0.0021102935899034642,
+        "paired_t_test_p_holm": 0.05486763333749007,
+        "wilcoxon_p": 0.005859375,
+        "wilcoxon_p_holm": 0.158203125,
+        "seed_differences": [
+          {
+            "paired_seed": 11,
+            "warm_minus_cold": -0.09999414259955434,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 22,
+            "warm_minus_cold": -0.1749391468167965,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 33,
+            "warm_minus_cold": -0.16197903856475998,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 44,
+            "warm_minus_cold": -0.05509467224398535,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 55,
+            "warm_minus_cold": -0.1100218777658393,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 66,
+            "warm_minus_cold": -0.11914220914670659,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 77,
+            "warm_minus_cold": -0.05251035057535536,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 88,
+            "warm_minus_cold": -0.12804901645951947,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 99,
+            "warm_minus_cold": -0.028717313694630334,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 110,
+            "warm_minus_cold": 0.042449617776459336,
+            "status": "paired"
+          }
+        ],
+        "included_in_primary_test_family": false
+      },
+      {
+        "event_index": 2,
+        "metric": "minimum_snap_objective",
+        "direction": "warm_start_minus_cold_start",
+        "n": 10,
+        "mean": -0.09327605035743,
+        "median": -0.15607374368167198,
+        "std_sample": 0.3283127599384645,
+        "q1": -0.20044557105155486,
+        "q3": -0.029246557438692783,
+        "min": -0.5917309258229625,
+        "max": 0.6547145568443464,
+        "mean_ci95": [
+          -0.32813685049769953,
+          0.14158474978283953
+        ],
+        "median_bootstrap_ci95": [
+          -0.25643371777527757,
+          0.023604045005818197
+        ],
+        "missing_warm_metric_pairs": 0,
+        "missing_cold_metric_pairs": 0,
+        "failed_pairs": 0,
+        "paired_t_test_p": 0.3923597254952044,
+        "paired_t_test_p_holm": 1.0,
+        "wilcoxon_p": 0.193359375,
+        "wilcoxon_p_holm": 1.0,
+        "seed_differences": [
+          {
+            "paired_seed": 11,
+            "warm_minus_cold": -0.16559114845769685,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 22,
+            "warm_minus_cold": 0.15491431756404173,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 33,
+            "warm_minus_cold": -0.16976153202238442,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 44,
+            "warm_minus_cold": -0.3472762870928583,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 55,
+            "warm_minus_cold": -0.0030933340674552667,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 66,
+            "warm_minus_cold": -0.10770622755240533,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 77,
+            "warm_minus_cold": -0.14655633890564712,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 88,
+            "warm_minus_cold": -0.21067358406127834,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 99,
+            "warm_minus_cold": -0.5917309258229625,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 110,
+            "warm_minus_cold": 0.6547145568443464,
+            "status": "paired"
+          }
+        ],
+        "included_in_primary_test_family": false
+      },
+      {
+        "event_index": 2,
+        "metric": "minimum_total_violation",
+        "direction": "warm_start_minus_cold_start",
+        "n": 10,
+        "mean": -0.7620485506978577,
+        "median": -0.8902598677261515,
+        "std_sample": 0.414478899382024,
+        "q1": -0.9856197383811003,
+        "q3": -0.4936556965415888,
+        "min": -1.2694176648400284,
+        "max": 0.1001584599047239,
+        "mean_ci95": [
+          -1.0585488937499088,
+          -0.4655482076458066
+        ],
+        "median_bootstrap_ci95": [
+          -1.0533153096340766,
+          -0.42251188291178127
+        ],
+        "missing_warm_metric_pairs": 0,
+        "missing_cold_metric_pairs": 0,
+        "failed_pairs": 0,
+        "paired_t_test_p": 0.0002549440080444936,
+        "paired_t_test_p_holm": 0.007138432225245821,
+        "wilcoxon_p": 0.00390625,
+        "wilcoxon_p_holm": 0.109375,
+        "seed_differences": [
+          {
+            "paired_seed": 11,
+            "warm_minus_cold": -0.9412424457073126,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 22,
+            "warm_minus_cold": -0.986300727354751,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 33,
+            "warm_minus_cold": -0.8392772897449903,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 44,
+            "warm_minus_cold": -0.7070871374310114,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 55,
+            "warm_minus_cold": -0.42251188291178127,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 66,
+            "warm_minus_cold": -0.9835767714601479,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 77,
+            "warm_minus_cold": -1.1653881735608407,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 88,
+            "warm_minus_cold": -1.2694176648400284,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 99,
+            "warm_minus_cold": 0.1001584599047239,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 110,
+            "warm_minus_cold": -0.40584187387243764,
+            "status": "paired"
+          }
+        ],
+        "included_in_primary_test_family": false
+      },
+      {
+        "event_index": 2,
+        "metric": "mean_total_violation",
+        "direction": "warm_start_minus_cold_start",
+        "n": 10,
+        "mean": -0.9590932419148863,
+        "median": -1.0217843759162744,
+        "std_sample": 0.36892565965077023,
+        "q1": -1.1790560358485236,
+        "q3": -0.7836389155760415,
+        "min": -1.4012970307552362,
+        "max": -0.22999428464000515,
+        "mean_ci95": [
+          -1.2230067603358479,
+          -0.6951797234939249
+        ],
+        "median_bootstrap_ci95": [
+          -1.2837177480618083,
+          -0.7011724652652125
+        ],
+        "missing_warm_metric_pairs": 0,
+        "missing_cold_metric_pairs": 0,
+        "failed_pairs": 0,
+        "paired_t_test_p": 1.7793584483808345e-05,
+        "paired_t_test_p_holm": 0.0005710785116002201,
+        "wilcoxon_p": 0.001953125,
+        "wilcoxon_p_holm": 0.06640625,
+        "seed_differences": [
+          {
+            "paired_seed": 11,
+            "warm_minus_cold": -1.3913620104192193,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 22,
+            "warm_minus_cold": -0.7662417060371352,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 33,
+            "warm_minus_cold": -1.1760734857043973,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 44,
+            "warm_minus_cold": -1.180050219229899,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 55,
+            "warm_minus_cold": -0.8358305441927605,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 66,
+            "warm_minus_cold": -1.0030336615284956,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 77,
+            "warm_minus_cold": -1.4012970307552362,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 88,
+            "warm_minus_cold": -1.040535090304053,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 99,
+            "warm_minus_cold": -0.22999428464000515,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 110,
+            "warm_minus_cold": -0.5665143863376645,
+            "status": "paired"
+          }
+        ],
+        "included_in_primary_test_family": false
+      },
+      {
+        "event_index": 3,
+        "metric": "wall_clock_seconds",
+        "direction": "warm_start_minus_cold_start",
+        "n": 10,
+        "mean": 0.01272335002431646,
+        "median": 0.014350650017149746,
+        "std_sample": 0.038859300856508315,
+        "q1": 0.0005431250610854477,
+        "q3": 0.03091712499735877,
+        "min": -0.07673530012834817,
+        "max": 0.061609000083990395,
+        "mean_ci95": [
+          -0.015074919204578527,
+          0.04052161925321145
+        ],
+        "median_bootstrap_ci95": [
+          -0.002378299948759377,
+          0.041016000031959265
+        ],
+        "missing_warm_metric_pairs": 0,
+        "missing_cold_metric_pairs": 0,
+        "failed_pairs": 0,
+        "paired_t_test_p": 0.3275021017415498,
+        "paired_t_test_p_holm": 1.0,
+        "wilcoxon_p": 0.16015625,
+        "wilcoxon_p_holm": 1.0,
+        "seed_differences": [
+          {
+            "paired_seed": 11,
+            "warm_minus_cold": 0.009307400090619922,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 22,
+            "warm_minus_cold": 0.010079800034873188,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 33,
+            "warm_minus_cold": 0.032735200016759336,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 44,
+            "warm_minus_cold": -0.07673530012834817,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 55,
+            "warm_minus_cold": -0.002378299948759377,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 66,
+            "warm_minus_cold": 0.02546289993915707,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 77,
+            "warm_minus_cold": 0.018621499999426305,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 88,
+            "warm_minus_cold": 0.061609000083990395,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 99,
+            "warm_minus_cold": 0.05656910012476146,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 110,
+            "warm_minus_cold": -0.008037799969315529,
+            "status": "paired"
+          }
+        ],
+        "included_in_primary_test_family": true
+      },
+      {
+        "event_index": 3,
+        "metric": "feasibility_rate",
+        "direction": "warm_start_minus_cold_start",
+        "n": 10,
+        "mean": 0.5349999999999999,
+        "median": 0.575,
+        "std_sample": 0.48364932199545846,
+        "q1": 0.075,
+        "q3": 1.0,
+        "min": 0.0,
+        "max": 1.0,
+        "mean_ci95": [
+          0.18901811744251906,
+          0.8809818825574808
+        ],
+        "median_bootstrap_ci95": [
+          0.05,
+          1.0
+        ],
+        "missing_warm_metric_pairs": 0,
+        "missing_cold_metric_pairs": 0,
+        "failed_pairs": 0,
+        "paired_t_test_p": 0.0067444124806013035,
+        "paired_t_test_p_holm": 0.1686103120150326,
+        "wilcoxon_p": 0.0078125,
+        "wilcoxon_p_holm": 0.203125,
+        "seed_differences": [
+          {
+            "paired_seed": 11,
+            "warm_minus_cold": 0.95,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 22,
+            "warm_minus_cold": 0.2,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 33,
+            "warm_minus_cold": 1.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 44,
+            "warm_minus_cold": 1.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 55,
+            "warm_minus_cold": 1.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 66,
+            "warm_minus_cold": 0.15,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 77,
+            "warm_minus_cold": 1.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 88,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 99,
+            "warm_minus_cold": 0.05,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 110,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          }
+        ],
+        "included_in_primary_test_family": true
+      },
+      {
+        "event_index": 3,
+        "metric": "best_feasible_path_length",
+        "direction": "warm_start_minus_cold_start",
+        "n": 0,
+        "mean": null,
+        "median": null,
+        "std_sample": null,
+        "q1": null,
+        "q3": null,
+        "min": null,
+        "max": null,
+        "mean_ci95": null,
+        "median_bootstrap_ci95": null,
+        "missing_warm_metric_pairs": 2,
+        "missing_cold_metric_pairs": 10,
+        "failed_pairs": 0,
+        "paired_t_test_p": null,
+        "paired_t_test_p_holm": null,
+        "wilcoxon_p": null,
+        "wilcoxon_p_holm": null,
+        "seed_differences": [
+          {
+            "paired_seed": 11,
+            "warm_minus_cold": null,
+            "status": "undefined_metric"
+          },
+          {
+            "paired_seed": 22,
+            "warm_minus_cold": null,
+            "status": "undefined_metric"
+          },
+          {
+            "paired_seed": 33,
+            "warm_minus_cold": null,
+            "status": "undefined_metric"
+          },
+          {
+            "paired_seed": 44,
+            "warm_minus_cold": null,
+            "status": "undefined_metric"
+          },
+          {
+            "paired_seed": 55,
+            "warm_minus_cold": null,
+            "status": "undefined_metric"
+          },
+          {
+            "paired_seed": 66,
+            "warm_minus_cold": null,
+            "status": "undefined_metric"
+          },
+          {
+            "paired_seed": 77,
+            "warm_minus_cold": null,
+            "status": "undefined_metric"
+          },
+          {
+            "paired_seed": 88,
+            "warm_minus_cold": null,
+            "status": "undefined_metric"
+          },
+          {
+            "paired_seed": 99,
+            "warm_minus_cold": null,
+            "status": "undefined_metric"
+          },
+          {
+            "paired_seed": 110,
+            "warm_minus_cold": null,
+            "status": "undefined_metric"
+          }
+        ],
+        "included_in_primary_test_family": true
+      },
+      {
+        "event_index": 3,
+        "metric": "hypervolume",
+        "direction": "warm_start_minus_cold_start",
+        "n": 10,
+        "mean": 0.7310645695426734,
+        "median": 0.8928678417556641,
+        "std_sample": 0.38958739229172923,
+        "q1": 0.8231157045741352,
+        "q3": 0.9522579603416566,
+        "min": 0.0,
+        "max": 1.0010634590643355,
+        "mean_ci95": [
+          0.4523705379876824,
+          1.0097586010976645
+        ],
+        "median_bootstrap_ci95": [
+          0.4189927380346239,
+          0.9586792570651956
+        ],
+        "missing_warm_metric_pairs": 0,
+        "missing_cold_metric_pairs": 0,
+        "failed_pairs": 0,
+        "paired_t_test_p": 0.00021962219519195593,
+        "paired_t_test_p_holm": 0.006369043660566722,
+        "wilcoxon_p": 0.0078125,
+        "wilcoxon_p_holm": 0.203125,
+        "seed_differences": [
+          {
+            "paired_seed": 11,
+            "warm_minus_cold": 0.9586792570651956,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 22,
+            "warm_minus_cold": 0.8181591140757644,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 33,
+            "warm_minus_cold": 0.9760286354698232,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 44,
+            "warm_minus_cold": 1.0010634590643355,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 55,
+            "warm_minus_cold": 0.9034818781404876,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 66,
+            "warm_minus_cold": 0.8379854760692478,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 77,
+            "warm_minus_cold": 0.8822538053708407,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 88,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 99,
+            "warm_minus_cold": 0.9329940701710392,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 110,
+            "warm_minus_cold": 0.0,
+            "status": "paired"
+          }
+        ],
+        "included_in_primary_test_family": true
+      },
+      {
+        "event_index": 3,
+        "metric": "igd",
+        "direction": "warm_start_minus_cold_start",
+        "n": 0,
+        "mean": null,
+        "median": null,
+        "std_sample": null,
+        "q1": null,
+        "q3": null,
+        "min": null,
+        "max": null,
+        "mean_ci95": null,
+        "median_bootstrap_ci95": null,
+        "missing_warm_metric_pairs": 2,
+        "missing_cold_metric_pairs": 10,
+        "failed_pairs": 0,
+        "paired_t_test_p": null,
+        "paired_t_test_p_holm": null,
+        "wilcoxon_p": null,
+        "wilcoxon_p_holm": null,
+        "seed_differences": [
+          {
+            "paired_seed": 11,
+            "warm_minus_cold": null,
+            "status": "undefined_metric"
+          },
+          {
+            "paired_seed": 22,
+            "warm_minus_cold": null,
+            "status": "undefined_metric"
+          },
+          {
+            "paired_seed": 33,
+            "warm_minus_cold": null,
+            "status": "undefined_metric"
+          },
+          {
+            "paired_seed": 44,
+            "warm_minus_cold": null,
+            "status": "undefined_metric"
+          },
+          {
+            "paired_seed": 55,
+            "warm_minus_cold": null,
+            "status": "undefined_metric"
+          },
+          {
+            "paired_seed": 66,
+            "warm_minus_cold": null,
+            "status": "undefined_metric"
+          },
+          {
+            "paired_seed": 77,
+            "warm_minus_cold": null,
+            "status": "undefined_metric"
+          },
+          {
+            "paired_seed": 88,
+            "warm_minus_cold": null,
+            "status": "undefined_metric"
+          },
+          {
+            "paired_seed": 99,
+            "warm_minus_cold": null,
+            "status": "undefined_metric"
+          },
+          {
+            "paired_seed": 110,
+            "warm_minus_cold": null,
+            "status": "undefined_metric"
+          }
+        ],
+        "included_in_primary_test_family": true
+      },
+      {
+        "event_index": 3,
+        "metric": "minimum_clearance",
+        "direction": "warm_start_minus_cold_start",
+        "n": 10,
+        "mean": 0.6471036454111461,
+        "median": 0.6178758983223656,
+        "std_sample": 0.3636108515417209,
+        "q1": 0.5237688212914999,
+        "q3": 0.7506165219705893,
+        "min": 0.09920402311532239,
+        "max": 1.4687192622659524,
+        "mean_ci95": [
+          0.38699211167490194,
+          0.9072151791473901
+        ],
+        "median_bootstrap_ci95": [
+          0.4315229583921717,
+          0.7693609962060706
+        ],
+        "missing_warm_metric_pairs": 0,
+        "missing_cold_metric_pairs": 0,
+        "failed_pairs": 0,
+        "paired_t_test_p": 0.0003226117548153443,
+        "paired_t_test_p_holm": 0.008710517380014295,
+        "wilcoxon_p": 0.001953125,
+        "wilcoxon_p_holm": 0.06640625,
+        "seed_differences": [
+          {
+            "paired_seed": 11,
+            "warm_minus_cold": 0.7633168376662038,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 22,
+            "warm_minus_cold": 0.5882454094976974,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 33,
+            "warm_minus_cold": 0.8262064175283956,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 44,
+            "warm_minus_cold": 0.7125155748837455,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 55,
+            "warm_minus_cold": 0.6128705043161229,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 66,
+            "warm_minus_cold": 0.6228812923286082,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 77,
+            "warm_minus_cold": 0.5022766252227675,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 88,
+            "warm_minus_cold": 0.27480050728664596,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 99,
+            "warm_minus_cold": 1.4687192622659524,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 110,
+            "warm_minus_cold": 0.09920402311532239,
+            "status": "paired"
+          }
+        ],
+        "included_in_primary_test_family": false
+      },
+      {
+        "event_index": 3,
+        "metric": "minimum_clearance_risk_objective",
+        "direction": "warm_start_minus_cold_start",
+        "n": 10,
+        "mean": -0.18102522986055924,
+        "median": -0.19130497034841587,
+        "std_sample": 0.07031821614175762,
+        "q1": -0.24023493522321876,
+        "q3": -0.13285322327191182,
+        "min": -0.2653901618458677,
+        "max": -0.046987762257757415,
+        "mean_ci95": [
+          -0.2313278513931034,
+          -0.13072260832801508
+        ],
+        "median_bootstrap_ci95": [
+          -0.2486163223943441,
+          -0.12091916620022244
+        ],
+        "missing_warm_metric_pairs": 0,
+        "missing_cold_metric_pairs": 0,
+        "failed_pairs": 0,
+        "paired_t_test_p": 1.924818427841483e-05,
+        "paired_t_test_p_holm": 0.0005966937126308597,
+        "wilcoxon_p": 0.001953125,
+        "wilcoxon_p_holm": 0.06640625,
+        "seed_differences": [
+          {
+            "paired_seed": 11,
+            "warm_minus_cold": -0.175347377642988,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 22,
+            "warm_minus_cold": -0.20726256305384372,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 33,
+            "warm_minus_cold": -0.2653901618458677,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 44,
+            "warm_minus_cold": -0.24882564419317874,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 55,
+            "warm_minus_cold": -0.12091916620022244,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 66,
+            "warm_minus_cold": -0.1131571328205678,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 77,
+            "warm_minus_cold": -0.16865539448697991,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 88,
+            "warm_minus_cold": -0.046987762257757415,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 99,
+            "warm_minus_cold": -0.2486163223943441,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 110,
+            "warm_minus_cold": -0.2150907737098427,
+            "status": "paired"
+          }
+        ],
+        "included_in_primary_test_family": false
+      },
+      {
+        "event_index": 3,
+        "metric": "minimum_snap_objective",
+        "direction": "warm_start_minus_cold_start",
+        "n": 10,
+        "mean": -0.03561189693525644,
+        "median": 0.04761286605698073,
+        "std_sample": 0.37156425993273384,
+        "q1": -0.2596744602211505,
+        "q3": 0.2581966044120766,
+        "min": -0.790685264295796,
+        "max": 0.3823584446631041,
+        "mean_ci95": [
+          -0.30141295629001674,
+          0.23018916241950385
+        ],
+        "median_bootstrap_ci95": [
+          -0.27836389483512314,
+          0.26387136776290454
+        ],
+        "missing_warm_metric_pairs": 0,
+        "missing_cold_metric_pairs": 0,
+        "failed_pairs": 0,
+        "paired_t_test_p": 0.7687155738860181,
+        "paired_t_test_p_holm": 1.0,
+        "wilcoxon_p": 1.0,
+        "wilcoxon_p_holm": 1.0,
+        "seed_differences": [
+          {
+            "paired_seed": 11,
+            "warm_minus_cold": 0.17093692155888862,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 22,
+            "warm_minus_cold": 0.28315918492375647,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 33,
+            "warm_minus_cold": 0.26387136776290454,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 44,
+            "warm_minus_cold": -0.790685264295796,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 55,
+            "warm_minus_cold": -0.07571118944492716,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 66,
+            "warm_minus_cold": -0.3492506976657319,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 77,
+            "warm_minus_cold": 0.24117231435959274,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 88,
+            "warm_minus_cold": -0.20360615637923263,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 99,
+            "warm_minus_cold": 0.3823584446631041,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 110,
+            "warm_minus_cold": -0.27836389483512314,
+            "status": "paired"
+          }
+        ],
+        "included_in_primary_test_family": false
+      },
+      {
+        "event_index": 3,
+        "metric": "minimum_total_violation",
+        "direction": "warm_start_minus_cold_start",
+        "n": 10,
+        "mean": -0.7290173998245776,
+        "median": -0.6568983423472042,
+        "std_sample": 0.2794558395428961,
+        "q1": -0.8126683584378409,
+        "q3": -0.5140329332853034,
+        "min": -1.2813958895435997,
+        "max": -0.4526161722553205,
+        "mean_ci95": [
+          -0.9289280645554182,
+          -0.529106735093737
+        ],
+        "median_bootstrap_ci95": [
+          -0.9441302267136117,
+          -0.48865218167013735
+        ],
+        "missing_warm_metric_pairs": 0,
+        "missing_cold_metric_pairs": 0,
+        "failed_pairs": 0,
+        "paired_t_test_p": 1.7305409442430912e-05,
+        "paired_t_test_p_holm": 0.0005710785116002201,
+        "wilcoxon_p": 0.001953125,
+        "wilcoxon_p_holm": 0.06640625,
+        "seed_differences": [
+          {
+            "paired_seed": 11,
+            "warm_minus_cold": -0.5962962619516374,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 22,
+            "warm_minus_cold": -0.786421605700439,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 33,
+            "warm_minus_cold": -1.1018388477267844,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 44,
+            "warm_minus_cold": -0.48865218167013735,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 55,
+            "warm_minus_cold": -1.2813958895435997,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 66,
+            "warm_minus_cold": -0.45386015250731077,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 77,
+            "warm_minus_cold": -0.5901751881308015,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 88,
+            "warm_minus_cold": -0.4526161722553205,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 99,
+            "warm_minus_cold": -0.8214172760169749,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 110,
+            "warm_minus_cold": -0.717500422742771,
+            "status": "paired"
+          }
+        ],
+        "included_in_primary_test_family": false
+      },
+      {
+        "event_index": 3,
+        "metric": "mean_total_violation",
+        "direction": "warm_start_minus_cold_start",
+        "n": 10,
+        "mean": -1.2655673564255392,
+        "median": -1.1839211221043318,
+        "std_sample": 0.34417236385252864,
+        "q1": -1.4705644110773073,
+        "q3": -1.01372029780244,
+        "min": -1.911502205976379,
+        "max": -0.869678930207769,
+        "mean_ci95": [
+          -1.511773433751694,
+          -1.0193612790993845
+        ],
+        "median_bootstrap_ci95": [
+          -1.525664905917893,
+          -0.9693948084913075
+        ],
+        "missing_warm_metric_pairs": 0,
+        "missing_cold_metric_pairs": 0,
+        "failed_pairs": 0,
+        "paired_t_test_p": 1.0063461412573582e-06,
+        "paired_t_test_p_holm": 3.421576880275018e-05,
+        "wilcoxon_p": 0.001953125,
+        "wilcoxon_p_holm": 0.06640625,
+        "seed_differences": [
+          {
+            "paired_seed": 11,
+            "warm_minus_cold": -1.3052629265555504,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 22,
+            "warm_minus_cold": -1.1847327336372175,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 33,
+            "warm_minus_cold": -1.6718087903338865,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 44,
+            "warm_minus_cold": -1.1831095105714458,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 55,
+            "warm_minus_cold": -1.525664905917893,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 66,
+            "warm_minus_cold": -1.1466967657358373,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 77,
+            "warm_minus_cold": -0.869678930207769,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 88,
+            "warm_minus_cold": -0.8878219868281052,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 99,
+            "warm_minus_cold": -1.911502205976379,
+            "status": "paired"
+          },
+          {
+            "paired_seed": 110,
+            "warm_minus_cold": -0.9693948084913075,
+            "status": "paired"
+          }
+        ],
+        "included_in_primary_test_family": false
+      }
+    ]
+  },
+  "interpretation_note": "These results are descriptive for one deterministic dynamic scenario. Statistical tests do not establish general algorithm superiority; failed runs remain in raw outputs and incomplete or undefined metric pairs are excluded from that metric's paired test with counts reported."
+}

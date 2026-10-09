@@ -11,9 +11,29 @@ class SphereObstacle:
     center: np.ndarray
     radius: float
     velocity: np.ndarray | None = None
+    path: list[np.ndarray] | None = None
+    path_times: list[float] | None = None
 
     def position_at(self, t: float) -> np.ndarray:
         """Calculate the center position of the obstacle at time t."""
+        if self.path is not None:
+            if self.path_times is None:
+                raise ValueError("SphereObstacle.path requires path_times to define the interpolation schedule.")
+            if len(self.path) != len(self.path_times):
+                raise ValueError("SphereObstacle.path and path_times must have the same length.")
+            if t <= self.path_times[0]:
+                return np.asarray(self.path[0], dtype=float)
+            if t >= self.path_times[-1]:
+                return np.asarray(self.path[-1], dtype=float)
+            for idx in range(len(self.path_times) - 1):
+                t0 = self.path_times[idx]
+                t1 = self.path_times[idx + 1]
+                if t0 <= t <= t1:
+                    p0 = np.asarray(self.path[idx], dtype=float)
+                    p1 = np.asarray(self.path[idx + 1], dtype=float)
+                    alpha = 0.0 if t1 == t0 else (t - t0) / (t1 - t0)
+                    return p0 + alpha * (p1 - p0)
+            return np.asarray(self.path[-1], dtype=float)
         if self.velocity is not None:
             return self.center + self.velocity * t
         return self.center

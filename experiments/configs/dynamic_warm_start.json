@@ -1,0 +1,66 @@
+{
+  "experiment_name": "dynamic_nsga2_warm_start_vs_cold_start",
+  "research_question": "When the environment changes, does warm-starting the population from the previous planning episode reduce replanning latency or improve solution quality compared with cold-start NSGA-II under the same objective-evaluation budget?",
+  "scenario": {
+    "bounds_max": [10.0, 10.0, 10.0],
+    "start": [0.0, 0.0, 0.0],
+    "goal": [9.0, 9.0, 9.0],
+    "event_times": [0.0, 2.5, 5.0, 7.5],
+    "event_snapshot_ids": ["event_0", "event_1", "event_2", "event_3"],
+    "obstacle": {
+      "type": "sphere",
+      "radius": 1.4722837237301862,
+      "path_times": [0.0, 2.5, 5.0, 7.5, 10.0],
+      "waypoints": [
+        [4.81472178, 5.17982633, 5.05417576],
+        [5.59637246, 4.32515273, 5.71900495],
+        [5.38706698, 4.27000335, 5.29863145],
+        [4.28149703, 6.5, 5.72593602],
+        [5.01472178, 5.27982633, 5.15417576]
+      ],
+      "after_final_path_time": "hold final waypoint"
+    },
+    "v_max": 3.0,
+    "a_max": 5.0,
+    "d_safe": 0.5,
+    "d_comfort": 1.5,
+    "t_max_factor": 1.75,
+    "limitations": [
+      "The fixed witness trajectory remains infeasible at every event; the schedule is a bounded clearance and violation stress case, not a feasibility-transition case.",
+      "The obstacle follows deterministic piecewise-linear motion and holds at its final waypoint after t=10.0.",
+      "This single scenario supports conclusions only about this schedule and these optimizer settings."
+    ]
+  },
+  "trajectory": {
+    "n_control_points": 8,
+    "dim": 3,
+    "degree": 5,
+    "optimize_time": false
+  },
+  "optimizer": {
+    "name": "NSGA-II",
+    "population_size": 20,
+    "objective_evaluations_per_event": 100,
+    "events_per_condition": 4,
+    "objective_evaluations_per_condition": 400,
+    "optimizer_seed_base": 26009,
+    "optimizer_seed_formula": "optimizer_seed_base + paired_seed + event_index"
+  },
+  "paired_seeds": [11, 22, 33, 44, 55, 66, 77, 88, 99, 110],
+  "run_order": "Alternate condition order by paired-seed index: cold then warm for even indices, warm then cold for odd indices.",
+  "metrics": {
+    "objective_normalization_scales": [125.0, 1.0, 50.0],
+    "objective_normalization_source": "Fixed before the controlled run: path length scaled by the 125-unit bounded-world control-polygon ceiling, clearance risk by its [0,1] range, and log snap by a fixed 50-unit scale.",
+    "hypervolume_reference_point_normalized": [1.05, 1.05, 1.05],
+    "hypervolume_reference_point_raw": [131.25, 1.05, 52.5],
+    "hypervolume_convention": "Minimization hypervolume in fixed scaled objective space; points outside the frozen reference point are excluded by the existing metric implementation.",
+    "igd_convention": "Euclidean IGD in the same fixed scaled objective space against the pooled feasible nondominated final-population front for the same event across both conditions and all paired seeds.",
+    "no_feasible_solution": "Hypervolume is 0.0; IGD and feasible-only metrics are null when the event has no common feasible reference front or the run has no feasible solution.",
+    "primary_metrics": ["wall_clock_seconds", "feasibility_rate", "best_feasible_path_length", "hypervolume", "igd"],
+    "analysis_bootstrap_seed": 80421,
+    "statistical_tests": ["paired t-test", "Wilcoxon signed-rank"],
+    "multiple_comparison_correction": "Holm correction across all event-by-metric tests separately for each paired-test family."
+  },
+  "reproduction_command": "python scripts/run_dynamic_experiment.py --config experiments/configs/dynamic_warm_start.json",
+  "output_basename": "dynamic_warm_start"
+}

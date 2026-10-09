@@ -16,3 +16,7 @@ env/
 *.ipynb_checkpoints/
 experiments/results/*
 !experiments/results/.gitkeep
+!experiments/results/dynamic_warm_start_runs.json
+!experiments/results/dynamic_warm_start_summary.json
+!experiments/results/dynamic_warm_start_analysis.json
+!experiments/results/dynamic_warm_start_summary.csv

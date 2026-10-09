@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass, field
+import time
 from typing import Any
 
 import numpy as np
@@ -70,10 +71,7 @@ class DynamicWarmStartController:
 
         front_zero = [ind for ind in fronts[0] if ind.evaluation.is_feasible]
         if not front_zero:
-            feasible = [ind for ind in population if ind.evaluation.is_feasible]
-            if not feasible:
-                return []
-            front_zero = feasible
+            front_zero = fronts[0]
 
         selected = front_zero[: self.population_size]
         return [ind.trajectory for ind in selected]
@@ -105,6 +103,7 @@ class DynamicWarmStartController:
         previous_population: list[Any] | None = None
 
         for event_index, event_time in enumerate(scenario.event_times):
+            event_start = time.perf_counter()
             if condition == "cold" or event_index == 0:
                 initial_population = None
                 import_count = 0
@@ -125,6 +124,7 @@ class DynamicWarmStartController:
                 initial_population=initial_population,
                 time_offset=event_time,
             )
+            wall_clock_seconds = time.perf_counter() - event_start
 
             if optimizer.evals > self.per_event_budget:
                 raise RuntimeError(f"Event {event_index} exceeded per-event budget: {optimizer.evals} > {self.per_event_budget}.")
@@ -136,6 +136,12 @@ class DynamicWarmStartController:
 
             cumulative += optimizer.evals
             fea = [ind for ind in population if ind.evaluation.is_feasible]
+            minimum_violation_individual = min(
+                population,
+                key=lambda ind: ind.evaluation.total_violation,
+                default=None,
+            )
+            accepted_import_evaluations = optimizer.evaluation_history[: len(initial_population or [])]
             event_record = {
                 "condition": condition,
                 "seed": self.seed + condition_seed,
@@ -144,14 +150,59 @@ class DynamicWarmStartController:
                 "snapshot_id": scenario.snapshot_id(event_index),
                 "objective_evaluations": int(optimizer.evals),
                 "cumulative_evaluations": int(cumulative),
+                "wall_clock_seconds": float(wall_clock_seconds),
                 "population_size": len(population),
                 "feasible_count": len(fea),
                 "feasibility_rate": float(len(fea) / len(population)) if population else 0.0,
+                "no_feasible_solution": not bool(fea),
                 "imported_trajectory_count": int(import_count),
                 "accepted_imported_count": len(initial_population) if initial_population is not None else 0,
+                "reevaluated_imported_count": min(
+                    len(initial_population or []),
+                    len(optimizer.evaluation_history),
+                ),
+                "accepted_imported_feasible_count": sum(
+                    1 for evaluation in accepted_import_evaluations if evaluation["is_feasible"]
+                ),
                 "rejected_imported_count": len(rejected_reasons),
                 "rejected_imported_reasons": rejected_reasons,
                 "best_objectives": np.min(np.array([ind.evaluation.objectives for ind in fea], dtype=float), axis=0).tolist() if fea else None,
+                "best_feasible_path_length": min(
+                    (float(ind.evaluation.objectives[0]) for ind in fea),
+                    default=None,
+                ),
+                "minimum_clearance": min(
+                    (float(ind.evaluation.min_clearance) for ind in population),
+                    default=None,
+                ),
+                "minimum_clearance_risk_objective": min(
+                    (float(ind.evaluation.objectives[1]) for ind in population),
+                    default=None,
+                ),
+                "minimum_snap_objective": min(
+                    (float(ind.evaluation.objectives[2]) for ind in population),
+                    default=None,
+                ),
+                "minimum_total_violation": (
+                    float(minimum_violation_individual.evaluation.total_violation)
+                    if minimum_violation_individual is not None
+                    else None
+                ),
+                "mean_total_violation": (
+                    float(np.mean([ind.evaluation.total_violation for ind in population]))
+                    if population
+                    else None
+                ),
+                "minimum_violation_details": (
+                    minimum_violation_individual.evaluation.violation_details
+                    if minimum_violation_individual is not None
+                    else None
+                ),
+                "population_objectives": [ind.evaluation.objectives.tolist() for ind in population],
+                "population_total_violations": [
+                    float(ind.evaluation.total_violation) for ind in population
+                ],
+                "feasible_objectives": [ind.evaluation.objectives.tolist() for ind in fea],
             }
             event_records.append(event_record)
             previous_population = population

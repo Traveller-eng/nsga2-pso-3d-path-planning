@@ -22,6 +22,25 @@ pip install -e ".[dev]"
 pytest
 ```
 
+## Dynamic Warm-Start Experiment
+
+Run the paired cold-start versus warm-start NSGA-II experiment with the frozen
+scenario, 10 paired seeds, four event times, and 100 objective evaluations per
+event:
+
+```bash
+python scripts/run_dynamic_experiment.py --config experiments/configs/dynamic_warm_start.json
+```
+
+The run writes `dynamic_warm_start_runs.json`, `dynamic_warm_start_summary.json`,
+`dynamic_warm_start_analysis.json`, and `dynamic_warm_start_summary.csv` under
+`experiments/results/`. Paired seeds are `11, 22, 33, 44, 55, 66, 77, 88, 99,
+110`. HV and IGD use fixed objective scales and the same
+event-specific pooled feasible reference front across both conditions and all
+seeds. The scenario is a single bounded clearance/violation stress case; its
+fixed witness is infeasible at every event, so results do not establish general
+algorithm superiority or test a feasibility transition.
+
 ## Project Structure
 
 ```

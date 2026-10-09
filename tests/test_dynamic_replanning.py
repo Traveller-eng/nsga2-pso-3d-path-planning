@@ -9,7 +9,7 @@ from planner.environment.obstacles import SphereObstacle
 from planner.environment.world import make_3d_static_world
 from planner.evaluation.evaluator import TrajectoryEvaluator
 from planner.optimization.dynamic import DynamicWarmStartController, DynamicScenario
-from planner.optimization.nsga2 import NSGA2Optimizer
+from planner.optimization.nsga2 import Individual, NSGA2Optimizer
 from planner.representation.trajectory import TrajectoryConfig, create_straight_line_trajectory
 
 
@@ -109,6 +109,12 @@ def test_dynamic_event_controller_enforces_budgets_and_warm_start():
     assert warm["events"][-1]["cumulative_evaluations"] == 400
     assert cold["events"][0]["objective_evaluations"] <= 100
     assert warm["events"][0]["objective_evaluations"] <= 100
+    assert warm["events"][0]["accepted_imported_count"] == 0
+    for event in cold["events"] + warm["events"]:
+        assert event["objective_evaluations"] == 100
+        assert event["wall_clock_seconds"] >= 0.0
+        assert event["no_feasible_solution"] == (event["feasible_count"] == 0)
+        assert event["reevaluated_imported_count"] == event["accepted_imported_count"]
 
 
 def test_dynamic_event_controller_reuses_only_current_environment_snapshot():
@@ -127,3 +133,61 @@ def test_dynamic_event_controller_reuses_only_current_environment_snapshot():
         assert "snapshot_id" in event
         assert event["objective_evaluations"] >= 1
         assert event["population_size"] == 20
+
+
+def test_warm_start_uses_least_violation_front_when_no_feasible_individuals_exist():
+    scenario = make_scenario()
+    trajectory = create_straight_line_trajectory(scenario.config)
+    evaluation = TrajectoryEvaluator(scenario.world).evaluate(trajectory)
+    assert not evaluation.is_feasible
+
+    controller = DynamicWarmStartController(population_size=20, per_event_budget=100, total_budget=400)
+    imported = controller._warm_start_population([Individual(trajectory, evaluation)])
+
+    assert imported == [trajectory]
+
+
+def test_piecewise_obstacle_schedule_remains_bounded_and_changes_clearance_across_events():
+    waypoints = [
+        np.array([4.81472178, 5.17982633, 5.05417576], dtype=float),
+        np.array([5.59637246, 4.32515273, 5.71900495], dtype=float),
+        np.array([5.38706698, 4.27000335, 5.29863145], dtype=float),
+        np.array([4.28149703, 6.5, 5.72593602], dtype=float),
+        np.array([5.01472178, 5.27982633, 5.15417576], dtype=float),
+    ]
+    world = make_3d_static_world(
+        bounds_max=(10.0, 10.0, 10.0),
+        start=(0.0, 0.0, 0.0),
+        goal=(9.0, 9.0, 9.0),
+        obstacles=[
+            SphereObstacle(
+                center=waypoints[0],
+                radius=1.4722837237301862,
+                path=waypoints,
+                path_times=[0.0, 2.5, 5.0, 7.5, 10.0],
+            )
+        ],
+        v_max=3.0,
+        a_max=5.0,
+        d_safe=0.5,
+        d_comfort=1.5,
+        t_max_factor=1.75,
+    )
+
+    for t in [0.0, 2.5, 5.0, 7.5, 10.0]:
+        center = world.obstacles[0].position_at(t)
+        assert np.all(center >= 0.0)
+        assert np.all(center <= 10.0)
+
+    config = TrajectoryConfig(8, 3, world.start, world.goal, world.t_max)
+    traj = create_straight_line_trajectory(config)
+    free = traj.free_control_points.copy()
+    free[2] = np.array([5.2, 5.2, 5.2], dtype=float)
+    traj.genes[:config.n_position_genes] = free.reshape(-1)
+
+    evaluations = [TrajectoryEvaluator(world, time_offset=t).evaluate(traj) for t in [0.0, 2.5, 5.0, 7.5]]
+    min_clearances = [ev.min_clearance for ev in evaluations]
+    clearance_delta = max(abs(a - b) for a in min_clearances for b in min_clearances)
+
+    assert clearance_delta > 0.75
+    assert all(not ev.is_feasible for ev in evaluations)
