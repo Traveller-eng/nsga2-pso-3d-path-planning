@@ -33,11 +33,15 @@ class TrajectoryEvaluator:
     Unified evaluator for trajectories calculating objectives and constraints.
     """
     
-    def __init__(self, world: WorldConfig):
+    def __init__(self, world: WorldConfig, time_offset: float = 0.0):
         """
         Initialize the evaluator with a world configuration.
+
+        The optional time_offset shifts the physical evaluation time used for obstacle motion.
+        Static evaluation remains unchanged when time_offset is zero.
         """
         self.world = world
+        self.time_offset = float(time_offset)
         self.n_samples = compute_sample_count(self.world.v_max, self.world.d_safe, self.world.t_max)
         
     def evaluate(self, trajectory: Trajectory) -> EvaluationResult:
@@ -52,7 +56,7 @@ class TrajectoryEvaluator:
         velocity = physical_samples['velocity']
         acceleration = physical_samples['acceleration']
         snap = physical_samples['snap']
-        times = physical_samples.get('t')
+        times = physical_samples.get('t') + self.time_offset if physical_samples.get('t') is not None else None
         
         objectives, raw_snap = compute_objectives(
             positions=positions,
@@ -102,9 +106,16 @@ class TrajectoryEvaluator:
             raw_snap=raw_snap
         )
 
-    def evaluate_from_genes(self, genes: np.ndarray, config: TrajectoryConfig) -> EvaluationResult:
+    def evaluate_from_genes(self, genes: np.ndarray, config: TrajectoryConfig, time_offset: float | None = None) -> EvaluationResult:
         """
         Evaluate a trajectory represented by a genes array.
         """
         trajectory = genes_to_trajectory(genes, config)
+        if time_offset is not None:
+            previous = self.time_offset
+            self.time_offset = float(time_offset)
+            try:
+                return self.evaluate(trajectory)
+            finally:
+                self.time_offset = previous
         return self.evaluate(trajectory)

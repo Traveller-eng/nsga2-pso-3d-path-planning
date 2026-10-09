@@ -267,24 +267,57 @@ class NSGA2Optimizer:
         upper = np.tile(world.upper_bounds, n_free)
         return lower, upper
 
-    def optimize(self, world: WorldConfig, config: TrajectoryConfig) -> list[Individual]:
-        evaluator = TrajectoryEvaluator(world)
+    def optimize(
+        self,
+        world: WorldConfig,
+        config: TrajectoryConfig,
+        initial_population: list[Trajectory] | None = None,
+        time_offset: float = 0.0,
+    ) -> list[Individual]:
+        self.evals = 0
+        self.generation = 0
+        self.history = []
+        self.evaluation_history = []
+
+        evaluator = TrajectoryEvaluator(world, time_offset=time_offset)
         lower_bounds, upper_bounds = self._get_bounds(config, world)
-        
+
         if self.mutation_prob is None:
             self.mutation_prob = 1.0 / config.n_genes if config.n_genes > 0 else 0.1
-            
-        population = []
-        
+
+        population: list[Individual] = []
+
         # Initialize population
         if self.max_evaluations <= 0:
             return population
-            
-        # 1 straight line
-        t0 = create_straight_line_trajectory(config)
-        res = self._evaluate_trajectory(t0, evaluator)
-        population.append(Individual(t0, res))
-        
+
+        if initial_population is not None:
+            validated: list[Individual] = []
+            for trajectory in initial_population:
+                if isinstance(trajectory, Individual):
+                    candidate = trajectory.trajectory
+                else:
+                    candidate = trajectory
+                repaired = repair_trajectory(candidate, world)
+                res = self._evaluate_trajectory(repaired, evaluator)
+                validated.append(Individual(repaired, res))
+            population.extend(validated[: self.population_size])
+
+        while len(population) < self.population_size and self.evals < self.max_evaluations:
+            if population:
+                # Use the current population as the warm-start seed base.
+                t_pert = create_perturbed_trajectory(config, self.rng, scale=np.linalg.norm(world.upper_bounds - world.lower_bounds) * 0.05)
+            else:
+                t_pert = create_straight_line_trajectory(config)
+            t_pert = repair_trajectory(t_pert, world)
+            res = self._evaluate_trajectory(t_pert, evaluator)
+            population.append(Individual(t_pert, res))
+
+        if not population:
+            t0 = create_straight_line_trajectory(config)
+            res = self._evaluate_trajectory(t0, evaluator)
+            population.append(Individual(t0, res))
+
         # Perturbed versions
         scale = np.linalg.norm(world.upper_bounds - world.lower_bounds) * 0.05
         while len(population) < self.population_size and self.evals < self.max_evaluations:
