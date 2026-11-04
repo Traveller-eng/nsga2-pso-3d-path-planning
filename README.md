@@ -22,6 +22,30 @@ pip install -e ".[dev]"
 pytest
 ```
 
+## Trajectory Lab
+
+The interactive simulation uses the existing Python planner through a
+localhost-only API. Install the Python package and start the service from the
+repository root:
+
+```bash
+pip install -e ".[dev]"
+python scripts/serve_simulation.py
+```
+
+In a second terminal, start the React/Three.js client with Node.js 20.19 or
+newer:
+
+```bash
+cd web
+npm install
+npm run dev
+```
+
+Open `http://127.0.0.1:5173`. Optimization runs execute in cancellable Python
+worker processes; production builds are served by the Python service after
+running `npm run build` from `web/`.
+
 ## Dynamic Warm-Start Experiment
 
 Run the paired cold-start versus warm-start NSGA-II experiment with the frozen

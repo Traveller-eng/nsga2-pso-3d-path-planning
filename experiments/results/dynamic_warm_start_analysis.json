@@ -32,77 +32,77 @@
         "metric": "wall_clock_seconds",
         "direction": "warm_start_minus_cold_start",
         "n": 10,
-        "mean": -0.01653661000309512,
-        "median": -0.025042249995749444,
-        "std_sample": 0.03667112859884087,
-        "q1": -0.03136000002268702,
-        "q3": -0.003552725102053955,
-        "min": -0.07808180002029985,
-        "max": 0.04454490006901324,
+        "mean": 0.010846250000759028,
+        "median": -0.010533950015087612,
+        "std_sample": 0.04115895333596702,
+        "q1": -0.02152859999478096,
+        "q3": 0.04564149999350775,
+        "min": -0.02860389999113977,
+        "max": 0.07984360001864843,
         "mean_ci95": [
-          -0.04276955509601428,
-          0.009696335089824037
+          -0.01859709151064931,
+          0.040289591512167364
         ],
         "median_bootstrap_ci95": [
-          -0.03598779992898926,
-          0.010965549969114363
+          -0.022105899988673627,
+          0.05116169998655096
         ],
         "missing_warm_metric_pairs": 0,
         "missing_cold_metric_pairs": 0,
         "failed_pairs": 0,
-        "paired_t_test_p": 0.18761621141132392,
+        "paired_t_test_p": 0.4262222321394575,
         "paired_t_test_p_holm": 1.0,
-        "wilcoxon_p": 0.322265625,
+        "wilcoxon_p": 0.556640625,
         "wilcoxon_p_holm": 1.0,
         "seed_differences": [
           {
             "paired_seed": 11,
-            "warm_minus_cold": -0.03240160003770143,
+            "warm_minus_cold": -0.019796700013102964,
             "status": "paired"
           },
           {
             "paired_seed": 22,
-            "warm_minus_cold": -0.07808180002029985,
+            "warm_minus_cold": -0.023812900006305426,
             "status": "paired"
           },
           {
             "paired_seed": 33,
-            "warm_minus_cold": -0.028235199977643788,
+            "warm_minus_cold": 0.05116169998655096,
             "status": "paired"
           },
           {
             "paired_seed": 44,
-            "warm_minus_cold": 0.0007013998692855239,
+            "warm_minus_cold": 0.06376360001740977,
             "status": "paired"
           },
           {
             "paired_seed": 55,
-            "warm_minus_cold": -0.02754589996766299,
+            "warm_minus_cold": -0.006585200026165694,
             "status": "paired"
           },
           {
             "paired_seed": 66,
-            "warm_minus_cold": 0.03824619995430112,
+            "warm_minus_cold": -0.01448270000400953,
             "status": "paired"
           },
           {
             "paired_seed": 77,
-            "warm_minus_cold": 0.04454490006901324,
+            "warm_minus_cold": 0.02908090001437813,
             "status": "paired"
           },
           {
             "paired_seed": 88,
-            "warm_minus_cold": -0.043740399880334735,
+            "warm_minus_cold": 0.07984360001864843,
             "status": "paired"
           },
           {
             "paired_seed": 99,
-            "warm_minus_cold": -0.022538600023835897,
+            "warm_minus_cold": -0.022105899988673627,
             "status": "paired"
           },
           {
             "paired_seed": 110,
-            "warm_minus_cold": -0.016315100016072392,
+            "warm_minus_cold": -0.02860389999113977,
             "status": "paired"
           }
         ],
@@ -830,77 +830,77 @@
         "metric": "wall_clock_seconds",
         "direction": "warm_start_minus_cold_start",
         "n": 10,
-        "mean": -0.011306850018445402,
-        "median": -0.017233300080988556,
-        "std_sample": 0.02792006583325175,
-        "q1": -0.03144442493794486,
-        "q3": 0.013668324943864718,
-        "min": -0.046503699966706336,
-        "max": 0.03335519996471703,
+        "mean": 0.018438210000749678,
+        "median": 0.010268350000842474,
+        "std_sample": 0.05089232199394079,
+        "q1": -0.01086012498853961,
+        "q3": 0.04548715000419179,
+        "min": -0.05078530000173487,
+        "max": 0.10947889997623861,
         "mean_ci95": [
-          -0.03127966192741764,
-          0.008665961890526836
+          -0.01796796399849861,
+          0.05484438399999797
         ],
         "median_bootstrap_ci95": [
-          -0.034510950034018606,
-          0.021061199950054288
+          -0.019686249986989424,
+          0.05514929999480955
         ],
         "missing_warm_metric_pairs": 0,
         "missing_cold_metric_pairs": 0,
         "failed_pairs": 0,
-        "paired_t_test_p": 0.23233858175041894,
+        "paired_t_test_p": 0.2814735816927291,
         "paired_t_test_p_holm": 1.0,
-        "wilcoxon_p": 0.322265625,
+        "wilcoxon_p": 0.375,
         "wilcoxon_p_holm": 1.0,
         "seed_differences": [
           {
             "paired_seed": 11,
-            "warm_minus_cold": -0.017356600030325353,
+            "warm_minus_cold": 0.0064709000289440155,
             "status": "paired"
           },
           {
             "paired_seed": 22,
-            "warm_minus_cold": -0.01711000013165176,
+            "warm_minus_cold": 0.07882699999026954,
             "status": "paired"
           },
           {
             "paired_seed": 33,
-            "warm_minus_cold": 0.03335519996471703,
+            "warm_minus_cold": 0.014065799972740933,
             "status": "paired"
           },
           {
             "paired_seed": 44,
-            "warm_minus_cold": 0.022563900100067258,
+            "warm_minus_cold": 0.004359400016255677,
             "status": "paired"
           },
           {
             "paired_seed": 55,
-            "warm_minus_cold": -0.03154629992786795,
+            "warm_minus_cold": 0.050159000005805865,
             "status": "paired"
           },
           {
             "paired_seed": 66,
-            "warm_minus_cold": -0.046503699966706336,
+            "warm_minus_cold": -0.05078530000173487,
             "status": "paired"
           },
           {
             "paired_seed": 77,
-            "warm_minus_cold": -0.008510300074703991,
+            "warm_minus_cold": 0.031471599999349564,
             "status": "paired"
           },
           {
             "paired_seed": 88,
-            "warm_minus_cold": -0.03113879996817559,
+            "warm_minus_cold": 0.10947889997623861,
             "status": "paired"
           },
           {
             "paired_seed": 99,
-            "warm_minus_cold": -0.03788310009986162,
+            "warm_minus_cold": -0.01593329999013804,
             "status": "paired"
           },
           {
             "paired_seed": 110,
-            "warm_minus_cold": 0.021061199950054288,
+            "warm_minus_cold": -0.043731899990234524,
             "status": "paired"
           }
         ],
@@ -1640,77 +1640,77 @@
         "metric": "wall_clock_seconds",
         "direction": "warm_start_minus_cold_start",
         "n": 10,
-        "mean": -0.004434699995908886,
-        "median": -0.007345149992033839,
-        "std_sample": 0.03742042916707128,
-        "q1": -0.0213205250329338,
-        "q3": 0.01798807503655553,
-        "min": -0.08328240003902465,
-        "max": 0.052392200101166964,
+        "mean": -0.014085839997278526,
+        "median": 0.004459450006834231,
+        "std_sample": 0.05119596081536126,
+        "q1": -0.01739882500260137,
+        "q3": 0.017459625007177237,
+        "min": -0.11820080003235489,
+        "max": 0.035923699993873015,
         "mean_ci95": [
-          -0.03120366242495941,
-          0.022334262433141638
+          -0.05070922412435075,
+          0.022537544129793696
         ],
         "median_bootstrap_ci95": [
-          -0.023135600029490888,
-          0.02223845006665215
+          -0.04764854999666568,
+          0.021137600007932633
         ],
         "missing_warm_metric_pairs": 0,
         "missing_cold_metric_pairs": 0,
         "failed_pairs": 0,
-        "paired_t_test_p": 0.7165158668779457,
+        "paired_t_test_p": 0.4068763964526502,
         "paired_t_test_p_holm": 1.0,
-        "wilcoxon_p": 0.845703125,
+        "wilcoxon_p": 0.921875,
         "wilcoxon_p_holm": 1.0,
         "seed_differences": [
           {
             "paired_seed": 11,
-            "warm_minus_cold": -0.08328240003902465,
+            "warm_minus_cold": -0.02259750000666827,
             "status": "paired"
           },
           {
             "paired_seed": 22,
-            "warm_minus_cold": 0.031012300052680075,
+            "warm_minus_cold": 0.035923699993873015,
             "status": "paired"
           },
           {
             "paired_seed": 33,
-            "warm_minus_cold": 0.052392200101166964,
+            "warm_minus_cold": 0.021137600007932633,
             "status": "paired"
           },
           {
             "paired_seed": 44,
-            "warm_minus_cold": 0.019495900021865964,
+            "warm_minus_cold": 0.006357300007948652,
             "status": "paired"
           },
           {
             "paired_seed": 55,
-            "warm_minus_cold": -0.01587530004326254,
+            "warm_minus_cold": 0.0025616000057198107,
             "status": "paired"
           },
           {
             "paired_seed": 66,
-            "warm_minus_cold": -0.023135600029490888,
+            "warm_minus_cold": -0.11820080003235489,
             "status": "paired"
           },
           {
             "paired_seed": 77,
-            "warm_minus_cold": 0.013464600080624223,
+            "warm_minus_cold": -0.09349430000293069,
             "status": "paired"
           },
           {
             "paired_seed": 88,
-            "warm_minus_cold": -0.02372840011958033,
+            "warm_minus_cold": 0.022831100039184093,
             "status": "paired"
           },
           {
             "paired_seed": 99,
-            "warm_minus_cold": -0.015621399972587824,
+            "warm_minus_cold": -0.001802799990400672,
             "status": "paired"
           },
           {
             "paired_seed": 110,
-            "warm_minus_cold": 0.0009310999885201454,
+            "warm_minus_cold": 0.00642570000491105,
             "status": "paired"
           }
         ],
@@ -2051,8 +2051,8 @@
         "missing_warm_metric_pairs": 0,
         "missing_cold_metric_pairs": 0,
         "failed_pairs": 0,
-        "paired_t_test_p": 2.8465227839719946e-05,
-        "paired_t_test_p_holm": 0.0008539568351915984,
+        "paired_t_test_p": 2.8465227839719933e-05,
+        "paired_t_test_p_holm": 0.000853956835191598,
         "wilcoxon_p": 0.001953125,
         "wilcoxon_p_holm": 0.06640625,
         "seed_differences": [
@@ -2132,8 +2132,8 @@
         "missing_warm_metric_pairs": 0,
         "missing_cold_metric_pairs": 0,
         "failed_pairs": 0,
-        "paired_t_test_p": 0.0021102935899034642,
-        "paired_t_test_p_holm": 0.05486763333749007,
+        "paired_t_test_p": 0.002110293589903464,
+        "paired_t_test_p_holm": 0.05486763333749006,
         "wilcoxon_p": 0.005859375,
         "wilcoxon_p_holm": 0.158203125,
         "seed_differences": [
@@ -2294,8 +2294,8 @@
         "missing_warm_metric_pairs": 0,
         "missing_cold_metric_pairs": 0,
         "failed_pairs": 0,
-        "paired_t_test_p": 0.0002549440080444936,
-        "paired_t_test_p_holm": 0.007138432225245821,
+        "paired_t_test_p": 0.00025494400804449357,
+        "paired_t_test_p_holm": 0.00713843222524582,
         "wilcoxon_p": 0.00390625,
         "wilcoxon_p_holm": 0.109375,
         "seed_differences": [
@@ -2375,7 +2375,7 @@
         "missing_warm_metric_pairs": 0,
         "missing_cold_metric_pairs": 0,
         "failed_pairs": 0,
-        "paired_t_test_p": 1.7793584483808345e-05,
+        "paired_t_test_p": 1.779358448380835e-05,
         "paired_t_test_p_holm": 0.0005710785116002201,
         "wilcoxon_p": 0.001953125,
         "wilcoxon_p_holm": 0.06640625,
@@ -2438,77 +2438,77 @@
         "metric": "wall_clock_seconds",
         "direction": "warm_start_minus_cold_start",
         "n": 10,
-        "mean": 0.01272335002431646,
-        "median": 0.014350650017149746,
-        "std_sample": 0.038859300856508315,
-        "q1": 0.0005431250610854477,
-        "q3": 0.03091712499735877,
-        "min": -0.07673530012834817,
-        "max": 0.061609000083990395,
+        "mean": -0.0011488000047393144,
+        "median": 0.01618645001144614,
+        "std_sample": 0.07987964261950362,
+        "q1": -0.0077741500062984414,
+        "q3": 0.03446554998663487,
+        "min": -0.19874399999389425,
+        "max": 0.10311089997412637,
         "mean_ci95": [
-          -0.015074919204578527,
-          0.04052161925321145
+          -0.058291253999069856,
+          0.05599365398959123
         ],
         "median_bootstrap_ci95": [
-          -0.002378299948759377,
-          0.041016000031959265
+          -0.019954800023697317,
+          0.03622859998722561
         ],
         "missing_warm_metric_pairs": 0,
         "missing_cold_metric_pairs": 0,
         "failed_pairs": 0,
-        "paired_t_test_p": 0.3275021017415498,
+        "paired_t_test_p": 0.9647188443670808,
         "paired_t_test_p_holm": 1.0,
-        "wilcoxon_p": 0.16015625,
+        "wilcoxon_p": 0.4921875,
         "wilcoxon_p_holm": 1.0,
         "seed_differences": [
           {
             "paired_seed": 11,
-            "warm_minus_cold": 0.009307400090619922,
+            "warm_minus_cold": -0.051399200019659474,
             "status": "paired"
           },
           {
             "paired_seed": 22,
-            "warm_minus_cold": 0.010079800034873188,
+            "warm_minus_cold": 0.040472200023941696,
             "status": "paired"
           },
           {
             "paired_seed": 33,
-            "warm_minus_cold": 0.032735200016759336,
+            "warm_minus_cold": 0.018161900021368638,
             "status": "paired"
           },
           {
             "paired_seed": 44,
-            "warm_minus_cold": -0.07673530012834817,
+            "warm_minus_cold": 0.03622859998722561,
             "status": "paired"
           },
           {
             "paired_seed": 55,
-            "warm_minus_cold": -0.002378299948759377,
+            "warm_minus_cold": 0.10311089997412637,
             "status": "paired"
           },
           {
             "paired_seed": 66,
-            "warm_minus_cold": 0.02546289993915707,
+            "warm_minus_cold": -0.19874399999389425,
             "status": "paired"
           },
           {
             "paired_seed": 77,
-            "warm_minus_cold": 0.018621499999426305,
+            "warm_minus_cold": 0.011489599972264841,
             "status": "paired"
           },
           {
             "paired_seed": 88,
-            "warm_minus_cold": 0.061609000083990395,
+            "warm_minus_cold": 0.029176399984862655,
             "status": "paired"
           },
           {
             "paired_seed": 99,
-            "warm_minus_cold": 0.05656910012476146,
+            "warm_minus_cold": 0.014211000001523644,
             "status": "paired"
           },
           {
             "paired_seed": 110,
-            "warm_minus_cold": -0.008037799969315529,
+            "warm_minus_cold": -0.014195399999152869,
             "status": "paired"
           }
         ],
@@ -2537,7 +2537,7 @@
         "missing_warm_metric_pairs": 0,
         "missing_cold_metric_pairs": 0,
         "failed_pairs": 0,
-        "paired_t_test_p": 0.0067444124806013035,
+        "paired_t_test_p": 0.006744412480601304,
         "paired_t_test_p_holm": 0.1686103120150326,
         "wilcoxon_p": 0.0078125,
         "wilcoxon_p_holm": 0.203125,
@@ -2693,7 +2693,7 @@
         "missing_warm_metric_pairs": 0,
         "missing_cold_metric_pairs": 0,
         "failed_pairs": 0,
-        "paired_t_test_p": 0.00021962219519195593,
+        "paired_t_test_p": 0.00021962219519195596,
         "paired_t_test_p_holm": 0.006369043660566722,
         "wilcoxon_p": 0.0078125,
         "wilcoxon_p_holm": 0.203125,
@@ -2930,8 +2930,8 @@
         "missing_warm_metric_pairs": 0,
         "missing_cold_metric_pairs": 0,
         "failed_pairs": 0,
-        "paired_t_test_p": 1.924818427841483e-05,
-        "paired_t_test_p_holm": 0.0005966937126308597,
+        "paired_t_test_p": 1.9248184278414826e-05,
+        "paired_t_test_p_holm": 0.0005966937126308596,
         "wilcoxon_p": 0.001953125,
         "wilcoxon_p_holm": 0.06640625,
         "seed_differences": [
@@ -3173,8 +3173,8 @@
         "missing_warm_metric_pairs": 0,
         "missing_cold_metric_pairs": 0,
         "failed_pairs": 0,
-        "paired_t_test_p": 1.0063461412573582e-06,
-        "paired_t_test_p_holm": 3.421576880275018e-05,
+        "paired_t_test_p": 1.0063461412573572e-06,
+        "paired_t_test_p_holm": 3.4215768802750144e-05,
         "wilcoxon_p": 0.001953125,
         "wilcoxon_p_holm": 0.06640625,
         "seed_differences": [
