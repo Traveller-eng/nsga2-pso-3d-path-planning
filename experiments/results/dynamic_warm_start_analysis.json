@@ -32,77 +32,77 @@
         "metric": "wall_clock_seconds",
         "direction": "warm_start_minus_cold_start",
         "n": 10,
-        "mean": 0.010846250000759028,
-        "median": -0.010533950015087612,
-        "std_sample": 0.04115895333596702,
-        "q1": -0.02152859999478096,
-        "q3": 0.04564149999350775,
-        "min": -0.02860389999113977,
-        "max": 0.07984360001864843,
+        "mean": -0.0016851000022143126,
+        "median": -0.003196100005879998,
+        "std_sample": 0.017247552388935227,
+        "q1": -0.0047555499986629,
+        "q3": 0.0034120749915018678,
+        "min": -0.027160099998582155,
+        "max": 0.03569469999638386,
         "mean_ci95": [
-          -0.01859709151064931,
-          0.040289591512167364
+          -0.014023255714729963,
+          0.010653055710301338
         ],
         "median_bootstrap_ci95": [
-          -0.022105899988673627,
-          0.05116169998655096
+          -0.013553249998949468,
+          0.004221699986374006
         ],
         "missing_warm_metric_pairs": 0,
         "missing_cold_metric_pairs": 0,
         "failed_pairs": 0,
-        "paired_t_test_p": 0.4262222321394575,
+        "paired_t_test_p": 0.7643865945832167,
         "paired_t_test_p_holm": 1.0,
-        "wilcoxon_p": 0.556640625,
+        "wilcoxon_p": 0.6953125,
         "wilcoxon_p_holm": 1.0,
         "seed_differences": [
           {
             "paired_seed": 11,
-            "warm_minus_cold": -0.019796700013102964,
+            "warm_minus_cold": -0.027160099998582155,
             "status": "paired"
           },
           {
             "paired_seed": 22,
-            "warm_minus_cold": -0.023812900006305426,
+            "warm_minus_cold": -0.02345989999594167,
             "status": "paired"
           },
           {
             "paired_seed": 33,
-            "warm_minus_cold": 0.05116169998655096,
+            "warm_minus_cold": -0.005125199997564778,
             "status": "paired"
           },
           {
             "paired_seed": 44,
-            "warm_minus_cold": 0.06376360001740977,
+            "warm_minus_cold": -0.0036466000019572675,
             "status": "paired"
           },
           {
             "paired_seed": 55,
-            "warm_minus_cold": -0.006585200026165694,
+            "warm_minus_cold": 0.008033399994019419,
             "status": "paired"
           },
           {
             "paired_seed": 66,
-            "warm_minus_cold": -0.01448270000400953,
+            "warm_minus_cold": 0.004221699986374006,
             "status": "paired"
           },
           {
             "paired_seed": 77,
-            "warm_minus_cold": 0.02908090001437813,
+            "warm_minus_cold": 0.03569469999638386,
             "status": "paired"
           },
           {
             "paired_seed": 88,
-            "warm_minus_cold": 0.07984360001864843,
+            "warm_minus_cold": -0.0035339000169187784,
             "status": "paired"
           },
           {
             "paired_seed": 99,
-            "warm_minus_cold": -0.022105899988673627,
+            "warm_minus_cold": 0.000983200006885454,
             "status": "paired"
           },
           {
             "paired_seed": 110,
-            "warm_minus_cold": -0.02860389999113977,
+            "warm_minus_cold": -0.002858299994841218,
             "status": "paired"
           }
         ],
@@ -830,77 +830,77 @@
         "metric": "wall_clock_seconds",
         "direction": "warm_start_minus_cold_start",
         "n": 10,
-        "mean": 0.018438210000749678,
-        "median": 0.010268350000842474,
-        "std_sample": 0.05089232199394079,
-        "q1": -0.01086012498853961,
-        "q3": 0.04548715000419179,
-        "min": -0.05078530000173487,
-        "max": 0.10947889997623861,
+        "mean": -0.023349849999067373,
+        "median": 0.001763249994837679,
+        "std_sample": 0.07429021013848724,
+        "q1": -0.003602775017498061,
+        "q3": 0.006271850004850421,
+        "min": -0.200690300000133,
+        "max": 0.054129600030137226,
         "mean_ci95": [
-          -0.01796796399849861,
-          0.05484438399999797
+          -0.07649386486764612,
+          0.029794164869511367
         ],
         "median_bootstrap_ci95": [
-          -0.019686249986989424,
-          0.05514929999480955
+          -0.05366254998079967,
+          0.007356149988481775
         ],
         "missing_warm_metric_pairs": 0,
         "missing_cold_metric_pairs": 0,
         "failed_pairs": 0,
-        "paired_t_test_p": 0.2814735816927291,
+        "paired_t_test_p": 0.346229961438444,
         "paired_t_test_p_holm": 1.0,
-        "wilcoxon_p": 0.375,
+        "wilcoxon_p": 0.76953125,
         "wilcoxon_p_holm": 1.0,
         "seed_differences": [
           {
             "paired_seed": 11,
-            "warm_minus_cold": 0.0064709000289440155,
+            "warm_minus_cold": -0.10813179999240674,
             "status": "paired"
           },
           {
             "paired_seed": 22,
-            "warm_minus_cold": 0.07882699999026954,
+            "warm_minus_cold": -0.200690300000133,
             "status": "paired"
           },
           {
             "paired_seed": 33,
-            "warm_minus_cold": 0.014065799972740933,
+            "warm_minus_cold": 0.007221100007882342,
             "status": "paired"
           },
           {
             "paired_seed": 44,
-            "warm_minus_cold": 0.004359400016255677,
+            "warm_minus_cold": 0.0012712000170722604,
             "status": "paired"
           },
           {
             "paired_seed": 55,
-            "warm_minus_cold": 0.050159000005805865,
+            "warm_minus_cold": 0.0022552999726030976,
             "status": "paired"
           },
           {
             "paired_seed": 66,
-            "warm_minus_cold": -0.05078530000173487,
+            "warm_minus_cold": 0.003424099995754659,
             "status": "paired"
           },
           {
             "paired_seed": 77,
-            "warm_minus_cold": 0.031471599999349564,
+            "warm_minus_cold": 0.01128819998120889,
             "status": "paired"
           },
           {
             "paired_seed": 88,
-            "warm_minus_cold": 0.10947889997623861,
+            "warm_minus_cold": 0.054129600030137226,
             "status": "paired"
           },
           {
             "paired_seed": 99,
-            "warm_minus_cold": -0.01593329999013804,
+            "warm_minus_cold": 0.0008067000308074057,
             "status": "paired"
           },
           {
             "paired_seed": 110,
-            "warm_minus_cold": -0.043731899990234524,
+            "warm_minus_cold": -0.005072600033599883,
             "status": "paired"
           }
         ],
@@ -1640,77 +1640,77 @@
         "metric": "wall_clock_seconds",
         "direction": "warm_start_minus_cold_start",
         "n": 10,
-        "mean": -0.014085839997278526,
-        "median": 0.004459450006834231,
-        "std_sample": 0.05119596081536126,
-        "q1": -0.01739882500260137,
-        "q3": 0.017459625007177237,
-        "min": -0.11820080003235489,
-        "max": 0.035923699993873015,
+        "mean": 0.004111139994347468,
+        "median": 0.003635750006651506,
+        "std_sample": 0.024392114088221405,
+        "q1": -0.006362900006934069,
+        "q3": 0.014717624988406897,
+        "min": -0.043597200041403994,
+        "max": 0.05056560001685284,
         "mean_ci95": [
-          -0.05070922412435075,
-          0.022537544129793696
+          -0.013337927269886057,
+          0.021560207258580995
         ],
         "median_bootstrap_ci95": [
-          -0.04764854999666568,
-          0.021137600007932633
+          -0.007060400006594136,
+          0.01607399998465553
         ],
         "missing_warm_metric_pairs": 0,
         "missing_cold_metric_pairs": 0,
         "failed_pairs": 0,
-        "paired_t_test_p": 0.4068763964526502,
+        "paired_t_test_p": 0.6069535646579545,
         "paired_t_test_p_holm": 1.0,
-        "wilcoxon_p": 0.921875,
+        "wilcoxon_p": 0.431640625,
         "wilcoxon_p_holm": 1.0,
         "seed_differences": [
           {
             "paired_seed": 11,
-            "warm_minus_cold": -0.02259750000666827,
+            "warm_minus_cold": -0.043597200041403994,
             "status": "paired"
           },
           {
             "paired_seed": 22,
-            "warm_minus_cold": 0.035923699993873015,
+            "warm_minus_cold": 0.05056560001685284,
             "status": "paired"
           },
           {
             "paired_seed": 33,
-            "warm_minus_cold": 0.021137600007932633,
+            "warm_minus_cold": -0.009127800003625453,
             "status": "paired"
           },
           {
             "paired_seed": 44,
-            "warm_minus_cold": 0.006357300007948652,
+            "warm_minus_cold": 0.010415099997771904,
             "status": "paired"
           },
           {
             "paired_seed": 55,
-            "warm_minus_cold": 0.0025616000057198107,
+            "warm_minus_cold": -0.007060400006594136,
             "status": "paired"
           },
           {
             "paired_seed": 66,
-            "warm_minus_cold": -0.11820080003235489,
+            "warm_minus_cold": -0.003143599984468892,
             "status": "paired"
           },
           {
             "paired_seed": 77,
-            "warm_minus_cold": -0.09349430000293069,
+            "warm_minus_cold": 0.010648499999660999,
             "status": "paired"
           },
           {
             "paired_seed": 88,
-            "warm_minus_cold": 0.022831100039184093,
+            "warm_minus_cold": 0.02060759998857975,
             "status": "paired"
           },
           {
             "paired_seed": 99,
-            "warm_minus_cold": -0.001802799990400672,
+            "warm_minus_cold": -0.004270400007953867,
             "status": "paired"
           },
           {
             "paired_seed": 110,
-            "warm_minus_cold": 0.00642570000491105,
+            "warm_minus_cold": 0.01607399998465553,
             "status": "paired"
           }
         ],
@@ -2438,77 +2438,77 @@
         "metric": "wall_clock_seconds",
         "direction": "warm_start_minus_cold_start",
         "n": 10,
-        "mean": -0.0011488000047393144,
-        "median": 0.01618645001144614,
-        "std_sample": 0.07987964261950362,
-        "q1": -0.0077741500062984414,
-        "q3": 0.03446554998663487,
-        "min": -0.19874399999389425,
-        "max": 0.10311089997412637,
+        "mean": -0.0025325900031020867,
+        "median": 0.0019442000048002228,
+        "std_sample": 0.025628978767060263,
+        "q1": -0.0004240500056766905,
+        "q3": 0.004771374988195021,
+        "min": -0.06664030003594235,
+        "max": 0.024871000030543655,
         "mean_ci95": [
-          -0.058291253999069856,
-          0.05599365398959123
+          -0.020866456957094173,
+          0.01580127695089
         ],
         "median_bootstrap_ci95": [
-          -0.019954800023697317,
-          0.03622859998722561
+          -0.008631300006527454,
+          0.013525799993658438
         ],
         "missing_warm_metric_pairs": 0,
         "missing_cold_metric_pairs": 0,
         "failed_pairs": 0,
-        "paired_t_test_p": 0.9647188443670808,
+        "paired_t_test_p": 0.7617886224852459,
         "paired_t_test_p_holm": 1.0,
-        "wilcoxon_p": 0.4921875,
+        "wilcoxon_p": 0.431640625,
         "wilcoxon_p_holm": 1.0,
         "seed_differences": [
           {
             "paired_seed": 11,
-            "warm_minus_cold": -0.051399200019659474,
+            "warm_minus_cold": -0.06664030003594235,
             "status": "paired"
           },
           {
             "paired_seed": 22,
-            "warm_minus_cold": 0.040472200023941696,
+            "warm_minus_cold": 0.024871000030543655,
             "status": "paired"
           },
           {
             "paired_seed": 33,
-            "warm_minus_cold": 0.018161900021368638,
+            "warm_minus_cold": -0.01892010000301525,
             "status": "paired"
           },
           {
             "paired_seed": 44,
-            "warm_minus_cold": 0.03622859998722561,
+            "warm_minus_cold": 0.022491200012154877,
             "status": "paired"
           },
           {
             "paired_seed": 55,
-            "warm_minus_cold": 0.10311089997412637,
+            "warm_minus_cold": 0.0045603999751619995,
             "status": "paired"
           },
           {
             "paired_seed": 66,
-            "warm_minus_cold": -0.19874399999389425,
+            "warm_minus_cold": 0.00022079999325796962,
             "status": "paired"
           },
           {
             "paired_seed": 77,
-            "warm_minus_cold": 0.011489599972264841,
+            "warm_minus_cold": 0.004841699992539361,
             "status": "paired"
           },
           {
             "paired_seed": 88,
-            "warm_minus_cold": 0.029176399984862655,
+            "warm_minus_cold": 0.0016574999899603426,
             "status": "paired"
           },
           {
             "paired_seed": 99,
-            "warm_minus_cold": 0.014211000001523644,
+            "warm_minus_cold": -0.0006390000053215772,
             "status": "paired"
           },
           {
             "paired_seed": 110,
-            "warm_minus_cold": -0.014195399999152869,
+            "warm_minus_cold": 0.002230900019640103,
             "status": "paired"
           }
         ],
