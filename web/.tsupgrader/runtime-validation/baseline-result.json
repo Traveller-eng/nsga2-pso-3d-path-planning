@@ -1,0 +1,97 @@
+{
+  "planHash": "6516cee70ace94e57954d846299066ac529127e3ceaa2082b6c4867542d35a31",
+  "phase": "baseline",
+  "recordedAtUtc": "2026-11-04T17:54:03.8393822Z",
+  "retryCount": 0,
+  "resetBaseline": true,
+  "complete": true,
+  "result": {
+    "setupSucceeded": true,
+    "setupDurationMs": 0,
+    "setupFailureOutput": null,
+    "assertions": [
+      {
+        "name": "webapp-build",
+        "kind": "process",
+        "verificationMethod": "exit-code",
+        "passed": true,
+        "timedOut": false,
+        "skipped": false,
+        "skippedReason": null,
+        "exitCode": 0,
+        "outputSample": "npm notice run trajectory-lab-ui@1.0.0 build\r\nnpm notice run tsc -b \u0026\u0026 vite build\r\n\u001B[36mvite v7.3.7 \u001B[32mbuilding client environment for production...\u001B[36m\u001B[39m\r\ntransforming...\r\n\u001B[32m\u2713\u001B[39m 2149 modules transformed.\r\nrendering chunks...\r\ncomputing gzip size...\r\n\u001B[2mdist/\u001B[22m\u001B[32mindex.html                                            \u001B[39m\u001B[1m\u001B[2m  0.85 kB\u001B[22m\u001B[1m\u001B[22m\u001B[2m \u2502 gzip:   0.43 kB\u001B[22m\r\n\u001B[2mdist/\u001B[22m\u001B[32massets/ibm-plex-mono-latin-400-normal-CvHOgSBP.woff   \u001B[39m\u001B[1m\u001B[2m 13.14 kB\u001B[22m\u001B[1m\u001B[22m\r\n\u001B[2mdist/\u001B[22m\u001B[32massets/ibm-plex-mono-latin-500-normal-CB9ihrfo.woff   \u001B[39m\u001B[1m\u001B[2m 13.16 kB\u001B[22m\u001B[1m\u001B[22m\r\n\u001B[2mdist/\u001B[22m\u001B[32massets/space-grotesk-latin-600-normal-DjKNqYRj.woff2  \u001B[39m\u001B[1m\u001B[2m 13.28 kB\u001B[22m\u001B[1m\u001B[22m\r\n\u001B[2mdist/\u001B[22m\u001B[32massets/space-grotesk-latin-500-normal-lFbtlQH6.woff2  \u001B[39m\u001B[1m\u001B[2m 13.31 kB\u001B[22m\u001B[1m\u001B[22m\r\n\u001B[2mdist/\u001B[22m\u001B[32massets/space-grotesk-latin-400-normal-CJ-V5oYT.woff2  \u001B[39m\u001B[1m\u001B[2m 13.39 kB\u001B[22m\u001B[1m\u001B[22m\r\n\u001B[2mdist/\u001B[22m\u001B[32massets/ibm-plex-mono-latin-400-normal-DMJ8VG8y.woff2  \u001B[39m\u001B[1m\u001B[2m 14.71 kB\u001B[22m\u001B[1m\u001B[22m\r\n\u001B[2mdist/\u001B[22m\u001B[32massets/ibm-plex-mono-latin-500-normal-DSY6xOcd.woff2  \u001B[39m\u001B[1m\u001B[2m 14.89 kB\u001B[22m\u001B[1m\u001B[22m\r\n\u001B[2mdist/\u001B[22m\u001B[32massets/space-grotesk-latin-600-normal-BflQw4A9.woff   \u001B[39m\u001B[1m\u001B[2m 16.88 kB\u001B[22m\u001B[1m\u001B[22m\r\n\u001B[2mdist/\u001B[22m\u001B[32massets/space-grotesk-latin-500-normal-CNSSEhBt.woff   \u001B[39m\u001B[1m\u001B[2m 16.99 kB\u001B[22m\u001B[1m\u001B[22m\r\n\u001B[2mdist/\u001B[22m\u001B[32massets/space-grotesk-latin-400-normal-BnQMeOim.woff   \u001B[39m\u001B[1m\u001B[2m 17.00 kB\u001B[22m\u001B[1m\u001B[22m\r\n\u001B[2mdist/\u001B[22m\u001B[35massets/index-2JoI3k5I.css                             \u001B[39m\u001B[1m\u001B[2m 33.61 kB\u001B[22m\u001B[1m\u001B[22m\u001B[2m \u2502 gzip:   7.95 kB\u001B[22m\r\n\u001B[2mdist/\u001B[22m\u001B[36massets/index-DXDD_o8L.js                              \u001B[39m\u001B[1m\u001B[2m 51.25 kB\u001B[22m\u001B[1m\u001B[22m\u001B[2m \u2502 gzip:  16.75 kB\u001B[22m\r\n\u001B[2mdist/\u001B[22m\u001B[36massets/vendor-react-xcgcVu9R.js                       \u001B[39m\u001B[1m\u001B[2m221.91 kB\u001B[22m\u001B[1m\u001B[22m\u001B[2m \u2502 gzip:  69.04 kB\u001B[22m\r\n\u001B[2mdist/\u001B[22m\u001B[36massets/vendor-r3f-D4Hr3Vrh.js                         \u001B[39m\u001B[1m\u001B[2m222.19 kB\u001B[22m\u001B[1m\u001B[22m\u001B[2m \u2502 gzip:  69.71 kB\u001B[22m\r\n\u001B[2mdist/\u001B[22m\u001B[36massets/vendor-three-C7nGNQ00.js                       \u001B[39m\u001B[1m\u001B[33m703.93 kB\u001B[39m\u001B[22m\u001B[2m \u2502 gzip: 181.32 kB\u001B[22m\r\n\u001B[33m\r\n(!) Some chunks are larger than 500 kB after minification. Consider:\r\n- Using dynamic import() to code-split the application\r\n- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks\r\n- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.\u001B[39m\r\n\u001B[32m\u2713 built in 12.65s\u001B[39m\r\n",
+        "durationMs": 20053
+      },
+      {
+        "name": "dev-server-serves-home",
+        "kind": "http-probe",
+        "verificationMethod": "http-status",
+        "passed": true,
+        "timedOut": false,
+        "skipped": false,
+        "skippedReason": null,
+        "exitCode": null,
+        "outputSample": "HTTP 200\n\u003C!doctype html\u003E\r\n\u003Chtml lang=\u0022en\u0022\u003E\r\n  \u003Chead\u003E\n    \u003Cscript type=\u0022module\u0022\u003Eimport { injectIntoGlobalHook } from \u0022/@react-refresh\u0022;\ninjectIntoGlobalHook(window);\nwindow.$RefreshReg$ = () =\u003E {};\nwindow.$RefreshSig$ = () =\u003E (type) =\u003E type;\u003C/script\u003E\n\n    \u003Cscript type=\u0022module\u0022 src=\u0022/@vite/client\u0022\u003E\u003C/script\u003E\n\r\n    \u003Cmeta charset=\u0022UTF-8\u0022 /\u003E\r\n    \u003Cmeta name=\u0022viewport\u0022 content=\u0022width=device-width, initial-scale=1.0\u0022 /\u003E\r\n    \u003Cmeta name=\u0022theme-color\u0022 content=\u0022#090e16\u0022 /\u003E\r\n    \u003Cmeta name=\u0022description\u0022 content=\u0022Interactive 3D trajectory planning laboratory backed by the Python optimizer.\u0022 /\u003E\r\n    \u003Ctitle\u003ETrajectory Lab | Autonomous Navigation\u003C/title\u003E\r\n  \u003C/head\u003E\r\n  \u003Cbody\u003E\r\n    \u003Cdiv id=\u0022root\u0022\u003E\u003C/div\u003E\r\n    \u003Cscript type=\u0022module\u0022 src=\u0022/src/main.tsx\u0022\u003E\u003C/script\u003E\r\n  \u003C/body\u003E\r\n\u003C/html\u003E\r\n",
+        "durationMs": 22
+      },
+      {
+        "name": "tests-pass",
+        "kind": "process",
+        "verificationMethod": "test-results",
+        "passed": true,
+        "timedOut": false,
+        "skipped": false,
+        "skippedReason": null,
+        "exitCode": 0,
+        "outputSample": "npm notice run trajectory-lab-ui@1.0.0 test\r\nnpm notice run vitest run\r\n\r\n RUN  v5.1.0 C:/Users/Lenovo/OneDrive/Desktop/New folder/nsga2-pso-3d-path-planning/web\r\n\r\n\r\n Test Files  1 passed (1)\r\n      Tests  2 passed (2)\r\n   Start at  23:24:02\r\n   Duration  883ms (transform 48%, tests 21%, import 21%, worker 9%)\r\n\r\n",
+        "durationMs": 3875,
+        "testResults": {
+          "testFramework": "vitest",
+          "runnerDetectedFrom": "package_json",
+          "testsTotal": 2,
+          "testsPassed": 2,
+          "testsFailed": 0,
+          "testsSkipped": 0,
+          "parseFailed": false
+        }
+      }
+    ],
+    "executions": [
+      {
+        "source": "webapp-build",
+        "resolvedExecutable": "C:\\Program Files\\nodejs\\npm.CMD",
+        "args": [
+          "run",
+          "build"
+        ],
+        "cwd": "C:\\Users\\Lenovo\\OneDrive\\Desktop\\New folder\\nsga2-pso-3d-path-planning\\web",
+        "env": {},
+        "prependPath": [],
+        "platform": "win32"
+      },
+      {
+        "source": "dev-server-serves-home",
+        "resolvedExecutable": "C:\\Program Files\\nodejs\\npm.CMD",
+        "args": [
+          "run",
+          "dev"
+        ],
+        "cwd": "C:\\Users\\Lenovo\\OneDrive\\Desktop\\New folder\\nsga2-pso-3d-path-planning\\web",
+        "env": {},
+        "prependPath": [],
+        "platform": "win32"
+      },
+      {
+        "source": "tests-pass",
+        "resolvedExecutable": "C:\\Program Files\\nodejs\\npm.CMD",
+        "args": [
+          "test"
+        ],
+        "cwd": "C:\\Users\\Lenovo\\OneDrive\\Desktop\\New folder\\nsga2-pso-3d-path-planning\\web",
+        "env": {},
+        "prependPath": [],
+        "platform": "win32"
+      }
+    ]
+  }
+}

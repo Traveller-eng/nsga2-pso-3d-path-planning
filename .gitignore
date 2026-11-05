@@ -20,3 +20,7 @@ experiments/results/*
 !experiments/results/dynamic_warm_start_summary.json
 !experiments/results/dynamic_warm_start_analysis.json
 !experiments/results/dynamic_warm_start_summary.csv
+web/node_modules/
+web/dist/
+web/.vite/
+*.tsbuildinfo
